@@ -1,56 +1,66 @@
 #!/bin/bash
-source server_cmd_prg.conf
-while read -a line;
-do
-#echo ${line[*]}
+source /home/c4988/git_rep/MCS_TO_Mon_Intrface/server_cmd_prg.conf
+if [ $(whoami) != 'root' ]; then
+        echo; echo -e "\e[1;31mScript must be run as sudo. Please Type \"sudo\" To Run As Root \e[0m"; echo
+        exit 1;
+fi
+#socat pty,link=/dev/ttyS1 tcp-listen:$LPORT &
+sleep 1
+line=$1
+echo ${line[*]}
 #echo ${#line[@]}
-
+sleep 1
 copy_to_server()
 {
 exec sshpass -p $PASSWORD scp server_cmd_prg.log $USER_AT_HOST:$LOG_FILE_PATH/server_cmd_prg.txt &
 }
-
 send_cmd()
 {
         case $1 in
-        1)      result=$(curl "http://$TO_MONITOR_IP_ADDR/TIC.cgi?time=000&count=up&status=start")
+        1)
+		result=$(curl "http://$TO_MONITOR_IP_ADDR/TIC.cgi?time=123&count=up&status=start")
 		echo "$result "`date` "Time Interval Clock Up Start - Monitor-ID: ${substr:0:2} Camara-ID: ${substr:2:3}" >> server_cmd_prg.log
 		echo "$result "`date`
         ;;
-        2)      result=$(curl "http://$TO_MONITOR_IP_ADDR/TIC.cgi?time=999&count=down&status=start")
+        2)      
+		result=$(curl "http://$TO_MONITOR_IP_ADDR/TIC.cgi?time=123&count=down&status=start")
                 echo "$result "`date`
 		echo "$result "`date` "Time Interval Clock Down Start - Monitor-ID: ${substr:0:2} Camara-ID: ${substr:2:3}" >> server_cmd_prg.log
         ;;
-        3)      result=$(curl "http://$TO_MONITOR_IP_ADDR/TIC.cgi?status=stop")
+        3)      
+		result=$(curl "http://$TO_MONITOR_IP_ADDR/TIC.cgi?status=stop")
                 echo "$result "`date`
 		echo "$result "`date` "Time Interval Clock Stop - Monitor-ID: ${substr:0:2} Camara-ID: ${substr:2:3}" >> server_cmd_prg.log
         ;;
-        4)      result=$(curl "http://$TO_MONITOR_IP_ADDR/trainhold.cgi?status=start")
+        4)      
+		result=$(curl "http://$TO_MONITOR_IP_ADDR/trainhold.cgi?status=start")
                 echo "$result "`date`
 		echo "$result "`date` "Train Hold On - Monitor-ID: ${substr:0:2} Camara-ID: ${substr:2:3}" >> server_cmd_prg.log
         ;;
-        5)      result=$(curl "http://$TO_MONITOR_IP_ADDR/trainhold.cgi?status=stop")
+        5)      
+		result=$(curl "http://$TO_MONITOR_IP_ADDR/trainhold.cgi?status=stop")
                 echo "$result "`date`
 		echo "$result "`date` "Train Hold Off - Monitor-ID: ${substr:0:2} Camara-ID: ${substr:2:3}" >> server_cmd_prg.log
         ;;
-        6)      result=$(curl "http://$TO_MONITOR_IP_ADDR/trainap.cgi?status=start")
+        6)      
+		result=$(curl "http://$TO_MONITOR_IP_ADDR/trainap.cgi?status=start")
                 echo "$result "`date`
 		echo "$result "`date` "Train Approaching On - Monitor-ID: ${substr:0:2} Camara-ID: ${substr:2:3}" >> server_cmd_prg.log
         ;;
-        7)      result=$(curl "http://$TO_MONITOR_IP_ADDR/trainap.cgi?status=stop")
+        7)      	
+		result=$(curl "http://$TO_MONITOR_IP_ADDR/trainap.cgi?status=stop")
                 echo "$result "`date`
 		echo "$result "`date` "Train Approaching Off - Monitor-ID: ${substr:0:2} Camara-ID: ${substr:2:3}" >> server_cmd_prg.log
         ;;
         esac
 }
-for ((i=0;i< ${#line[@]}; i++)); do
+#for ((i=0;i< ${#line[@]}; i++)); do
 
-        array_cmd="${line[$i]}"
-
+#        array_cmd="${line[$i]}"
+array_cmd=$line
 substr=${array_cmd:2:${#array_cmd}}
 
 if [ ! -z $DIR/$FILE_TH_START ] && [ -f $DIR/$FILE_TH_START ]; then
-#echo "File $FILE Exists"
         IFS=$'\r\n' GLOBIGNORE='*' command eval  'TH_START=($(cat $DIR/$FILE_TH_START))'
         length=${#TH_START[@]}
         for ((a=0; a<$length; a++)); do
@@ -134,6 +144,4 @@ if [ ! -z $DIR/$FILE_TRAIN_AP_STOP ] && [ -f $DIR/$FILE_TRAIN_AP_STOP ]; then
                 fi
         done
 fi
-done
 copy_to_server
-done < /dev/ttyS1 

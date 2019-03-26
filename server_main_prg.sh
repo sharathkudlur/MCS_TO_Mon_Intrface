@@ -4,6 +4,6 @@ if [ $(whoami) != 'root' ]; then
         exit 1;
 fi
 source server_cmd_prg.conf
-socat pty,link=/dev/ttyS1 tcp-listen:$LPORT &
-sleep 15
+#socat pty,link=/dev/ttyS1 tcp-listen:$LPORT &
+sleep 1
 exec ./server_cmd_prg.sh
