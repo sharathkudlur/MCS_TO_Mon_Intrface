@@ -11,3 +11,28 @@
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Mar 25 15:06:45 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Mar 26 14:40:47 HKT 2019 Train Approaching Off - Monitor-ID: 05 Camara-ID: 005
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Mar 26 14:43:03 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Mar 29 14:05:39 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Mar 29 14:06:52 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Apr 1 11:03:45 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Apr 1 11:04:53 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Apr 1 11:10:16 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Apr 1 11:37:34 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 2 12:20:26 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 2 12:22:02 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 2 12:22:30 HKT 2019 Train Hold Off - Monitor-ID: 54 Camara-ID: 087
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Apr  8 16:58:55 2019 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Apr  8 16:58:55 2019 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 10:08:28.246377 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 10:08:28.246377 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 10:36:48.488331 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 10:36:48.488331 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 10:36:48.488331 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 10:36:48.488331 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 9 14:56:21 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 9 14:56:57 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 9 15:05:43 HKT 2019 Train Hold Off - Monitor-ID: 54 Camara-ID: 087
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 15:03:02.013893 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 15:16:28.252176 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 15:16:28.252176 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 9 15:17:56 HKT 2019 Time Interval Clock Down Start - Monitor-ID: 02 Camara-ID: 002
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TICSignal Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-04-09 15:16:28.252176 Time Interval Clock Stop

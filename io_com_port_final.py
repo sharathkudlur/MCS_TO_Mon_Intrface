@@ -14,30 +14,21 @@ baud = 9600
 
 ser = serial.Serial(port, baud, timeout=1)
 ser.reset_input_buffer()
-time.sleep(1.5)
-
 
 year = time.asctime(time.localtime(time.time()))+'\r\n'
 ser.write(year.encode())
 ser.write(b'Give a Input Value:\r\n') 
 while 1:
-	bytesToRead = ser.inWaiting()
-	a = ser.read(bytesToRead) 
+	a = ser.readline().decode('utf-8')
+#	b=[chr(c) for c in a]
 	try:
-		a = a.decode('utf-8')
-		print(a)
-		a = a.rstrip()
-		b = a 
-		time.sleep(1)
-		print (a)
-		l1=[c for c in b]
-		l2=[ord(c) for c in b]
-		if len(l2) != 0:
-			l2.remove(0)
-			l3=[chr(d) for d in l2] 
-			cmd = "".join(l3)
-			time.sleep(1.2)
-			subprocess.check_call(['/home/c4988/git_rep/MCS_TO_Mon_Intrface/server_cmd_prg.sh', str(cmd)])
-		time.sleep(1.2)
+		c = a.rstrip('\x00')
+		time.sleep(0.5)
+		print(c)
+		if len(c) != 0:
+			print(c)
+			time.sleep(0.5)
+			subprocess.check_call(['/home/c4988/git_rep/MCS_TO_Mon_Intrface/server_cmd_prg.sh', str(c)])
+		time.sleep(0.2)
 	except ser.SerialTimeoutException:
 		print('Data could not be read')
