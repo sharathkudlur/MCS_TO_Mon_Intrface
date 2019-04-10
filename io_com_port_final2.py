@@ -18,13 +18,19 @@ import configparser
 config = configparser.ConfigParser()
 config.read('/home/c4988/git_rep/MCS_TO_Mon_Intrface/server_cmd_prg.conf')
 lp = config.get("CONF","LPORT").strip('\"')
-TOM_IP = config.get("CONF","TO_MONITOR_IP_ADDR").strip('\"')
+
+TOM_IP_1 = config.get("PLATFORM_1","TO_MONITOR_IP_ADDR").strip('\"')
+TOM_IP_2 = config.get("PLATFORM_2","TO_MONITOR_IP_ADDR").strip('\"')
+TOM_IP_3 = config.get("PLATFORM_3","TO_MONITOR_IP_ADDR").strip('\"')
+TOM_IP_4 = config.get("PLATFORM_4","TO_MONITOR_IP_ADDR").strip('\"')
+
 subprocess.Popen(["socat", "pty,link=/dev/ttyS1", "tcp-listen:" +lp])
-time.sleep(15) 
+
+time.sleep(5) 
 port = '/dev/ttyS1' 
 baud = 9600
 
-ser = serial.Serial(port, baud, timeout=1)
+ser_HOK = serial.Serial(port, baud, timeout=1)
 ser.reset_input_buffer()
 today = datetime.now()
 year = time.asctime(time.localtime(time.time()))
@@ -32,6 +38,15 @@ ser.write(year.encode())
 ser.write(b'Give a Input Value:\r\n')
 
 HOK = { "platform": (1,2,3,4), "cam_id_thd": (111,108,110,109), "cam_id_no_thd": (1,1,29,30), "mon_id": (52,53,54,55) } 
+KOW = { "platform": (1,2,3,4), "cam_id_thd": (142,143,144,145), "cam_id_no_thd": (1,2,6,7), "mon_id": (52,53,54,55) }
+OLY = { "platform": (1,2), "cam_id_thd": (27,28), "cam_id_no_thd": (1,2), "mon_id": (40,41) }
+LAK = { "platform": (3,4), "cam_id_thd": (39,38), "cam_id_no_thd": (1,2), "mon_id": (61,62) }
+TSY = { "platform": (1,2,3,4), "cam_id_thd": (77,79,78,80), "cam_id_no_thd": (43,2,42,1), "mon_id": (52,53,54,55) }
+SUN = { "platform": (1,2), "cam_id_thd": (044,045), "cam_id_no_thd": (001,002), "mon_id": (008,009) }
+TUC = { "platform": (1,2), "cam_id_thd": (21,22), "cam_id_no_thd": (1,2), "mon_id": (40,41) }
+AIR = { "platform": (1,2,3,'AWE'), "cam_id_thd": (32,31,88,84), "cam_id_no_thd": (1,4,87,83), "mon_id": (19,20,54,51) }
+
+STATION = [ HOK,KOW,OLY,LAK,TSY,SUN,TUC,AIR ]
 
 def send_url_cmd(string):
 	result = urllib.request.urlopen(string)
@@ -44,7 +59,7 @@ def log_file(logs):
 	f.write(logs + "\n")
 
 while 1:
-	a = ser.read(20)
+	HOK = ser_HOK.read(10)
 #	a = codecs.decode(ser.read(),"UTF-8") #.decode('utf-16')
 	s = ''.join([chr(int(x, 16)) for x in a.split()])
 	s = s.strip()
@@ -75,6 +90,26 @@ while 1:
 		html = send_url_cmd(url)
 		print(html + " " + str(today) + " Time Interval Clock Stop")
 		logs = html + " " + str(today) + " Time Interval Clock Stop"
+		log_file(logs)
+
+	if s == 'THD-ON':
+		THD_ON = {"status": "start"}
+		Q_THD_ON = parse.urlencode(THD_ON)
+		url = "http://" + TOM_IP + "/trainhold.cgi?" + Q_THD_ON
+		send_url_cmd(url)
+		html = send_url_cmd(url)
+		print(html + " " + str(today) + " Train Hold Start")
+		logs = html + " " + str(today) + " Train Hold Start"
+		log_file(logs)
+
+	if s == 'THD-OFF':
+		THD_OFF = {"status": "stop"}
+		Q_THD_OFF = parse.urlencode(THD_OFF)
+		url = "http://" + TOM_IP + "/trainhold.cgi?" + Q_THD_OFF
+		send_url_cmd(url)
+		html = send_url_cmd(url)
+		print(html + " " + str(today) + " Train Hold Stop")
+		logs = html + " " + str(today) + " Train Hold Stop"
 		log_file(logs)
 	try:
 		time.sleep(0.5)
