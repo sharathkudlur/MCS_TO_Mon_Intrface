@@ -7,6 +7,7 @@ import urllib
 from urllib import parse
 from urllib.request import urlopen
 from urllib import request
+import paramiko
 
 from datetime import datetime
 
@@ -17,7 +18,12 @@ import configparser
 
 config = configparser.ConfigParser()
 config.read('/home/c4988/git_rep/MCS_TO_Mon_Intrface/server_cmd_prg.conf')
+
 lp = config.get("CONF","LPORT").strip('\"')
+COMP = config.get("SMMS_INFO","HOST_IP")
+USER = config.get("SMMS_INFO","USER_NAME")
+PSW = config.get("SMMS_INFO","PASSWORD")
+LOGF = config.get("SMMS_INFO","LOG_FILE_PATH")
 
 TOM_IP_1 = config.get("PLATFORM_1","TO_MONITOR_IP_ADDR").strip('\"')
 TOM_IP_2 = config.get("PLATFORM_2","TO_MONITOR_IP_ADDR").strip('\"')
@@ -47,6 +53,19 @@ TUC = { "platform": (1,2), "cam_id_thd": (21,22), "cam_id_no_thd": (1,2), "mon_i
 AIR = { "platform": (1,2,3,'AWE'), "cam_id_thd": (32,31,88,84), "cam_id_no_thd": (1,4,87,83), "mon_id": (19,20,54,51) }
 
 STATION = [ HOK,KOW,OLY,LAK,TSY,SUN,TUC,AIR ]
+def update_log_to_SMMS(log_string):
+	ssh = paramiko.SSHClient()
+	log_string = " Log Update Test"
+	ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+	try:
+		ssh.connect(COMP, username=USER, password=PSW, allow_agent = False)
+	except paramiko.SSHException:
+		print("Connectin Failed")
+		quit()
+	stdin,stdout,stderr = ssh.exec_command("cd "+ LOGF +" && d: && echo" + log_string +" >> server_cmd_prg.txt")
+	for line in stdout.readlines():
+		print(line.strip())
+	ssh.close()
 
 def send_url_cmd(string):
 	result = urllib.request.urlopen(string)
@@ -72,6 +91,7 @@ while 1:
 		print(html + " " + str(today) + " Time Interval Clock Down Start")
 		logs = html + " " + str(today) + " Time Interval Clock Down Start"
 		log_file(logs)
+		update_log_to_SMMS(logs)
 
 	if s == 'L000':
 		count_up = {"time": s[1:], "count": "up", "status": "start"}
@@ -81,6 +101,7 @@ while 1:
 		print(html + " " + str(today) + " Time Interval Clock Up Start")
 		logs = html + " " + str(today) + " Time Interval Clock Up Start"
 		log_file(logs)
+		update_log_to_SMMS(logs)
 
 	if s == 'S':
 		count_stop = {"status": "stop"}
@@ -91,6 +112,7 @@ while 1:
 		print(html + " " + str(today) + " Time Interval Clock Stop")
 		logs = html + " " + str(today) + " Time Interval Clock Stop"
 		log_file(logs)
+		update_log_to_SMMS(logs)
 
 	if s == 'THD-ON':
 		THD_ON = {"status": "start"}
@@ -101,6 +123,7 @@ while 1:
 		print(html + " " + str(today) + " Train Hold Start")
 		logs = html + " " + str(today) + " Train Hold Start"
 		log_file(logs)
+		update_log_to_SMMS(logs)
 
 	if s == 'THD-OFF':
 		THD_OFF = {"status": "stop"}
@@ -111,6 +134,7 @@ while 1:
 		print(html + " " + str(today) + " Train Hold Stop")
 		logs = html + " " + str(today) + " Train Hold Stop"
 		log_file(logs)
+		update_log_to_SMMS(logs)
 	try:
 		time.sleep(0.5)
 #		print(s)
