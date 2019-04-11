@@ -1,10 +1,17 @@
-import os
 import paramiko
-COMP="192.168.0.95"
-USER="sharath_km"
-PSW="mallappa"
-LOGP= "D:\Logs"
-LOGP=LOGP.strip("\"")
+import configparser
+
+config = configparser.ConfigParser()
+config.read('/home/c4988/git_rep/MCS_TO_Mon_Intrface/server_cmd_prg.conf')
+
+COMP =config.get("SMMS_INFO","HOST_IP").strip("\"")
+USER =config.get("SMMS_INFO","USER_NAME").strip("\"")
+PSW =config.get("SMMS_INFO","PASSWORD").strip("\"")
+LOGP =config.get("SMMS_INFO","LOG_FILE_PATH").strip('\"')
+#LOGP=LOGP.strip("\"")
+
+
+print(COMP,USER,PSW,LOGP)
 class update_log_to_SMMS:
         def __init__(self,log):
                 self.log=log
@@ -23,5 +30,5 @@ class update_log_to_SMMS:
                         print(line.strip())
                 ssh.close()
 
-obj = update_log_to_SMMS("sharath")
+obj = update_log_to_SMMS("This is working!")
 obj.update_log()
