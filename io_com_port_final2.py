@@ -8,6 +8,7 @@ from urllib import parse
 from urllib.request import urlopen
 from urllib import request
 import paramiko
+import socket
 
 from datetime import datetime
 
@@ -23,7 +24,7 @@ lp = config.get("CONF","LPORT").strip('\"')
 COMP = config.get("SMMS_INFO","HOST_IP")
 USER = config.get("SMMS_INFO","USER_NAME")
 PSW = config.get("SMMS_INFO","PASSWORD")
-LOGF = config.get("SMMS_INFO","LOG_FILE_PATH")
+LOGF = config.get("SMMS_INFO","LOG_FILE_PATH").strip('\"')
 
 TOM_IP_1 = config.get("PLATFORM_1","TO_MONITOR_IP_ADDR").strip('\"')
 TOM_IP_2 = config.get("PLATFORM_2","TO_MONITOR_IP_ADDR").strip('\"')
@@ -36,7 +37,7 @@ time.sleep(5)
 port = '/dev/ttyS1' 
 baud = 9600
 
-ser_HOK = serial.Serial(port, baud, timeout=1)
+ser = serial.Serial(port, baud, timeout=1)
 ser.reset_input_buffer()
 today = datetime.now()
 year = time.asctime(time.localtime(time.time()))
@@ -48,24 +49,29 @@ KOW = { "platform": (1,2,3,4), "cam_id_thd": (142,143,144,145), "cam_id_no_thd":
 OLY = { "platform": (1,2), "cam_id_thd": (27,28), "cam_id_no_thd": (1,2), "mon_id": (40,41) }
 LAK = { "platform": (3,4), "cam_id_thd": (39,38), "cam_id_no_thd": (1,2), "mon_id": (61,62) }
 TSY = { "platform": (1,2,3,4), "cam_id_thd": (77,79,78,80), "cam_id_no_thd": (43,2,42,1), "mon_id": (52,53,54,55) }
-SUN = { "platform": (1,2), "cam_id_thd": (044,045), "cam_id_no_thd": (001,002), "mon_id": (008,009) }
+SUN = { "platform": (1,2), "cam_id_thd": ("044","045"), "cam_id_no_thd": ('001','002'), "mon_id": ('008','009') }
 TUC = { "platform": (1,2), "cam_id_thd": (21,22), "cam_id_no_thd": (1,2), "mon_id": (40,41) }
 AIR = { "platform": (1,2,3,'AWE'), "cam_id_thd": (32,31,88,84), "cam_id_no_thd": (1,4,87,83), "mon_id": (19,20,54,51) }
 
 STATION = [ HOK,KOW,OLY,LAK,TSY,SUN,TUC,AIR ]
-def update_log_to_SMMS(log_string):
-	ssh = paramiko.SSHClient()
-	log_string = " Log Update Test"
-	ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-	try:
-		ssh.connect(COMP, username=USER, password=PSW, allow_agent = False)
-	except paramiko.SSHException:
-		print("Connectin Failed")
-		quit()
-	stdin,stdout,stderr = ssh.exec_command("cd "+ LOGF +" && d: && echo" + log_string +" >> server_cmd_prg.txt")
-	for line in stdout.readlines():
-		print(line.strip())
-	ssh.close()
+
+class update_log_to_SMMS:
+        def __init__(self,log):
+                self.log=log
+        def update_log(string):
+                ssh = paramiko.SSHClient()
+                ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+                try:
+                        ssh.connect(COMP, username=USER, password=PSW, allow_agent = False)
+                except paramiko.SSHException:
+                        print("Connectin Failed")
+                        quit()
+                print(string.log)
+                print(LOGP)
+                stdin,stdout,stderr = ssh.exec_command("cd " + LOGP +" && d: && echo " +  string.log  +" >> server_cmd_prg.txt")
+                for line in stdout.readlines():
+                        print(line.strip())
+                ssh.close()
 
 def send_url_cmd(string):
 	result = urllib.request.urlopen(string)
@@ -76,9 +82,10 @@ def send_url_cmd(string):
 def log_file(logs):
 	f = open("/home/c4988/git_rep/MCS_TO_Mon_Intrface/server_cmd_prg.log", "a+")
 	f.write(logs + "\n")
-
+TOM_IP = "192.168.0.171"
 while 1:
-	HOK = ser_HOK.read(10)
+	a = ser.read(100)
+	print(a)
 #	a = codecs.decode(ser.read(),"UTF-8") #.decode('utf-16')
 	s = ''.join([chr(int(x, 16)) for x in a.split()])
 	s = s.strip()
@@ -91,7 +98,8 @@ while 1:
 		print(html + " " + str(today) + " Time Interval Clock Down Start")
 		logs = html + " " + str(today) + " Time Interval Clock Down Start"
 		log_file(logs)
-		update_log_to_SMMS(logs)
+		TIC=update_log_to_SMMS(logs)
+		TIC.update_log()
 
 	if s == 'L000':
 		count_up = {"time": s[1:], "count": "up", "status": "start"}
@@ -101,8 +109,8 @@ while 1:
 		print(html + " " + str(today) + " Time Interval Clock Up Start")
 		logs = html + " " + str(today) + " Time Interval Clock Up Start"
 		log_file(logs)
-		update_log_to_SMMS(logs)
-
+		TIC.update_log_to_SMMS(logs)
+		TIC.update_log()
 	if s == 'S':
 		count_stop = {"status": "stop"}
 		q_count_stop = parse.urlencode(count_stop)
@@ -112,8 +120,8 @@ while 1:
 		print(html + " " + str(today) + " Time Interval Clock Stop")
 		logs = html + " " + str(today) + " Time Interval Clock Stop"
 		log_file(logs)
-		update_log_to_SMMS(logs)
-
+		TIC=update_log_to_SMMS(logs)
+		TIC.update_log()
 	if s == 'THD-ON':
 		THD_ON = {"status": "start"}
 		Q_THD_ON = parse.urlencode(THD_ON)
@@ -123,7 +131,8 @@ while 1:
 		print(html + " " + str(today) + " Train Hold Start")
 		logs = html + " " + str(today) + " Train Hold Start"
 		log_file(logs)
-		update_log_to_SMMS(logs)
+		THD.update_log_to_SMMS(logs)
+		THD.update_log()
 
 	if s == 'THD-OFF':
 		THD_OFF = {"status": "stop"}
@@ -134,7 +143,9 @@ while 1:
 		print(html + " " + str(today) + " Train Hold Stop")
 		logs = html + " " + str(today) + " Train Hold Stop"
 		log_file(logs)
-		update_log_to_SMMS(logs)
+		THD=update_log_to_SMMS(logs)
+		THD.update_log()
+
 	try:
 		time.sleep(0.5)
 #		print(s)
