@@ -49,3 +49,16 @@
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 16:44:56.819888 Time Interval Clock Down Start
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 16:47:13.231377 Time Interval Clock Down Start
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 16:53:04.793915 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 17:13:26.736993 Train Hold Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 17:13:26.736993 Train Hold Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 12:16:10.909778 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 13:47:31.630886 Train Hold Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 13:47:31.630886 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 13:47:31.630886 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 13:47:31.630886 Train Hold Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Apr 12 13:51:24 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Apr 12 14:01:13 HKT 2019 Train Hold Off - Monitor-ID: 54 Camara-ID: 087
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 14:18:25.026208 Train Hold Start
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-04-12 14:18:25.026208 Train Hold Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Apr 12 14:21:59 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 14:18:25.026208 Train Hold Stop

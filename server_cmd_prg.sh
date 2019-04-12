@@ -10,6 +10,7 @@ line=$1
 echo ${line[*]}
 #echo ${#line[@]}
 sleep 1
+USER_AT_HOST=$USER_NAME"@"$HOST_IP
 copy_to_server()
 {
 exec sshpass -p $PASSWORD scp server_cmd_prg.log $USER_AT_HOST:$LOG_FILE_PATH/server_cmd_prg.txt &

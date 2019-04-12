@@ -8,7 +8,6 @@ from urllib import parse
 from urllib.request import urlopen
 from urllib import request
 import paramiko
-import socket
 
 from datetime import datetime
 
@@ -41,12 +40,12 @@ def update_log_to_SMMS(log_str):
 		print(line.strip())
 	ssh.close()
 
-TOM_IP_1 = config.get("PLATFORM_1","TO_MONITOR_IP_ADDR").strip('\"')
-TOM_IP_2 = config.get("PLATFORM_2","TO_MONITOR_IP_ADDR").strip('\"')
-TOM_IP_3 = config.get("PLATFORM_3","TO_MONITOR_IP_ADDR").strip('\"')
-TOM_IP_4 = config.get("PLATFORM_4","TO_MONITOR_IP_ADDR").strip('\"')
+#TOM_IP_4 = config.get("PLATFORM_4","TO_MONITOR_IP_ADDR").strip('\"')
 
 subprocess.Popen(["socat", "pty,link=/dev/ttyS1", "tcp-listen:" +lp])
+#subprocess.Popen(["socat", "pty,link=/dev/ttyS2", "tcp-listen:" +lp])
+#subprocess.Popen(["socat", "pty,link=/dev/ttyS3", "tcp-listen:" +lp])
+#subprocess.Popen(["socat", "pty,link=/dev/ttyS4", "tcp-listen:" +lp])
 
 time.sleep(5) 
 port = '/dev/ttyS1' 
@@ -57,18 +56,9 @@ ser.reset_input_buffer()
 today = datetime.now()
 year = time.asctime(time.localtime(time.time()))
 ser.write(year.encode())
-ser.write(b'Give a Input Value:\r\n')
+#ser.write(b'Give a Input Value:\r\n')
 
-HOK = { "platform": (1,2,3,4), "cam_id_thd": (111,108,110,109), "cam_id_no_thd": (1,1,29,30), "mon_id": (52,53,54,55) } 
-KOW = { "platform": (1,2,3,4), "cam_id_thd": (142,143,144,145), "cam_id_no_thd": (1,2,6,7), "mon_id": (52,53,54,55) }
-OLY = { "platform": (1,2), "cam_id_thd": (27,28), "cam_id_no_thd": (1,2), "mon_id": (40,41) }
-LAK = { "platform": (3,4), "cam_id_thd": (39,38), "cam_id_no_thd": (1,2), "mon_id": (61,62) }
-TSY = { "platform": (1,2,3,4), "cam_id_thd": (77,79,78,80), "cam_id_no_thd": (43,2,42,1), "mon_id": (52,53,54,55) }
-SUN = { "platform": (1,2), "cam_id_thd": ("044","045"), "cam_id_no_thd": ('001','002'), "mon_id": ('008','009') }
-TUC = { "platform": (1,2), "cam_id_thd": (21,22), "cam_id_no_thd": (1,2), "mon_id": (40,41) }
-AIR = { "platform": (1,2,3,'AWE'), "cam_id_thd": (32,31,88,84), "cam_id_no_thd": (1,4,87,83), "mon_id": (19,20,54,51) }
-
-STATION = [ HOK,KOW,OLY,LAK,TSY,SUN,TUC,AIR ]
+L_PLATFORM = [ 1,2,3,4,5,6,7,8,9 ]
 
 def send_url_cmd(string):
 	result = urllib.request.urlopen(string)
@@ -79,14 +69,25 @@ def send_url_cmd(string):
 def log_file(logs):
 	f = open("/home/c4988/git_rep/MCS_TO_Mon_Intrface/server_cmd_prg.log", "a+")
 	f.write(logs + "\n")
-TOM_IP = "192.168.0.171"
+
+def PLATFORM_TOM_IP(PLATFORM):
+	for i in PLATFORM.split():
+		for j in L_PLATFORM:
+			if i in str(j):
+				TOM_IP = config.get("PLATFORM_"+i ,"TO_MONITOR_IP_ADDR").strip('\"')
+				print(TOM_IP)
+				return TOM_IP
+			else:
+				print("Platform ip not found in config file.")
+#TOM_IP="192.168.0.171"
 while 1:
 	a = ser.read(100)
 	print(a)
 #	a = codecs.decode(ser.read(),"UTF-8") #.decode('utf-16')
 	s = ''.join([chr(int(x, 16)) for x in a.split()])
 	s = s.strip()
-	print(s)
+#	for i in s.split():
+		
 	if len(s) == 4 and s != 'L000':
 		count_down = {"time": s[1:], "count": "down", "status": "start"}
 		q_count_down = parse.urlencode(count_down)
@@ -118,9 +119,10 @@ while 1:
 		log_file(logs)
 		update_log_to_SMMS(logs)
 
-	if s == 'THD-ON':
+	if (s.find('THD-ON') != -1):
 		THD_ON = {"status": "start"}
 		Q_THD_ON = parse.urlencode(THD_ON)
+		TOM_IP = PLATFORM_TOM_IP(s)
 		url = "http://" + TOM_IP + "/trainhold.cgi?" + Q_THD_ON
 		send_url_cmd(url)
 		html = send_url_cmd(url)
@@ -129,17 +131,17 @@ while 1:
 		log_file(logs)
 		update_log_to_SMMS(logs)
 
-	if s == 'THD-OFF':
+	if (s.find('THD-OFF') != -1):
 		THD_OFF = {"status": "stop"}
 		Q_THD_OFF = parse.urlencode(THD_OFF)
+		TOM_IP = PLATFORM_TOM_IP(s)
 		url = "http://" + TOM_IP + "/trainhold.cgi?" + Q_THD_OFF
 		send_url_cmd(url)
 		html = send_url_cmd(url)
 		print(html + " " + str(today) + " Train Hold Stop")
 		logs = html + " " + str(today) + " Train Hold Stop"
 		log_file(logs)
-		THD=update_log_to_SMMS(logs)
-		THD.update_log()
+		update_log_to_SMMS(logs)
 
 	try:
 		time.sleep(0.5)
