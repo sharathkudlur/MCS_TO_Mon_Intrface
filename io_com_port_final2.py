@@ -2,12 +2,14 @@
 import serial
 import time
 import io
+import os
 import sys
 import urllib
 from urllib import parse
 from urllib.request import urlopen
 from urllib import request
 import paramiko
+import re
 
 from datetime import datetime
 
@@ -15,11 +17,19 @@ import codecs
 import binascii
 import subprocess
 import configparser
+from configparser import ConfigParser
 
 config = configparser.ConfigParser()
 config.read('/home/c4988/git_rep/MCS_TO_Mon_Intrface/server_cmd_prg.conf')
+# Load the configuration file
+cwd = os.getcwd()
+with open(cwd+"/server_cmd_prg.conf") as f:
+	sample_config = f.read()
+config = configparser.RawConfigParser(allow_no_value=True)
+config.read_string(sample_config)
 
 lp = config.get("CONF","LPORT").strip('\"')
+
 COMP = config.get("SMMS_INFO","HOST_IP").strip('\"')
 USER = config.get("SMMS_INFO","USER_NAME").strip('\"')
 PSW = config.get("SMMS_INFO","PASSWORD").strip('\"')
@@ -43,9 +53,6 @@ def update_log_to_SMMS(log_str):
 #TOM_IP_4 = config.get("PLATFORM_4","TO_MONITOR_IP_ADDR").strip('\"')
 
 subprocess.Popen(["socat", "pty,link=/dev/ttyS1", "tcp-listen:" +lp])
-#subprocess.Popen(["socat", "pty,link=/dev/ttyS2", "tcp-listen:" +lp])
-#subprocess.Popen(["socat", "pty,link=/dev/ttyS3", "tcp-listen:" +lp])
-#subprocess.Popen(["socat", "pty,link=/dev/ttyS4", "tcp-listen:" +lp])
 
 time.sleep(5) 
 port = '/dev/ttyS1' 
@@ -67,10 +74,12 @@ def send_url_cmd(string):
 	return html
 
 def log_file(logs):
-	f = open("/home/c4988/git_rep/MCS_TO_Mon_Intrface/server_cmd_prg.log", "a+")
+	f = open(cwd+"/server_cmd_prg.log", "a+")
 	f.write(logs + "\n")
 
 def PLATFORM_TOM_IP(PLATFORM):
+	for section in config.sections():
+		print(section)
 	for i in PLATFORM.split():
 		for j in L_PLATFORM:
 			if i in str(j):
@@ -88,6 +97,7 @@ while 1:
 	s = s.strip()
 #	for i in s.split():
 		
+#	if (re.search('L'+[0-9][0-9][1-9]),s):
 	if len(s) == 4 and s != 'L000':
 		count_down = {"time": s[1:], "count": "down", "status": "start"}
 		q_count_down = parse.urlencode(count_down)
@@ -98,7 +108,7 @@ while 1:
 		log_file(logs)
 		update_log_to_SMMS(logs)
 
-	if s == 'L000':
+	if (s.find('L000') != -1):
 		count_up = {"time": s[1:], "count": "up", "status": "start"}
 		q_count_up = parse.urlencode(count_up)
 		url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_up
@@ -108,7 +118,7 @@ while 1:
 		log_file(logs)
 		update_log_to_SMMS(logs)
 
-	if s == 'S':
+	if (s.find('S') != -1):
 		count_stop = {"status": "stop"}
 		q_count_stop = parse.urlencode(count_stop)
 		url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_stop
