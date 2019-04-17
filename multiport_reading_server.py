@@ -6,6 +6,21 @@ import socketserver
 import configparser
 import os
 
+def update_log_to_SMMS(log_str):
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        try:
+                ssh.connect(COMP, username=USER, password=PSW, allow_agent = False)
+        except paramiko.SSHException:
+                print("Connectin Failed")
+                quit()
+        print(log_str)
+#       print(LOGP)
+        stdin,stdout,stderr = ssh.exec_command("cd " + LOGP +" && d: && echo \"" +  log_str  +"\" >> server_cmd_prg.txt")
+        for line in stdout.readlines():
+                print(line.strip())
+        ssh.close()
+
 class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 
     def handle(self):
@@ -23,7 +38,7 @@ class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
 if __name__ == "__main__":
 
     cwd = os.getcwd()
-    with open(os.getcwd()+"/test_ini.ini" ,'r+') as f:
+    with open(os.getcwd()+"/server.conf" ,'r+') as f:
        sample_config = f.read()
     config = configparser.RawConfigParser(allow_no_value=True)
     config.read_string(sample_config)
