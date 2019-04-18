@@ -62,3 +62,13 @@
 <HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-04-12 14:18:25.026208 Train Hold Stop
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Apr 12 14:21:59 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 14:18:25.026208 Train Hold Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 14:09:26.713057 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 14:09:50.597561 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 14:11:11.356873 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 14:11:19.276802 Time Interval Clock Up Start
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TICSignal Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-04-18 14:13:49.382897 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 14:14:36.234480 Time Interval Clock Stop
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-04-18 15:55:44.599825 Train Hold Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 15:56:37.782152 Train Hold Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 15:59:48.664368 Train Hold Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 16:58:08.211209 Train Hold Start
