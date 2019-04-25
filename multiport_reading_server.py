@@ -18,7 +18,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 #        TOM_IP="192.168.0.171"
         today = datetime.now()
 
-        self.data = self.request.recv(1024).strip()
+        self.data = self.request.recv(19200).strip()
         print("%s wrote: " % self.client_address[0])
         self.port = self.request.getsockname()[1]
         print (self.data)
@@ -31,6 +31,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 count_down = {"time": s[1:], "count": "down", "status": "start"}
                 q_count_down = parse.urlencode(count_down)
                 TOM_IP = PLATFORM_TOM_IP(self.port)
+                print(TOM_IP)
                 url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_down
                 html = send_url_cmd(url)
                 print(html + " " + str(today) + " Time Interval Clock Down Start")
@@ -41,7 +42,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
         if (s.find('L000') != -1):
                 count_up = {"time": s[1:], "count": "up", "status": "start"}
                 q_count_up = parse.urlencode(count_up)
-                TOM_IP = PLATFORM_TOM_IP(port)
+                TOM_IP = PLATFORM_TOM_IP(self.port)
                 url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_up
                 html = send_url_cmd(url)
                 print(html + " " + str(today) + " Time Interval Clock Up Start")
@@ -52,7 +53,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
         if (s.find('S') != -1):
                 count_stop = {"status": "stop"}
                 q_count_stop = parse.urlencode(count_stop)
-                TOM_IP = PLATFORM_TOM_IP(port)
+                TOM_IP = PLATFORM_TOM_IP(self.port)
                 url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_stop
                 send_url_cmd(url)
                 html = send_url_cmd(url)
@@ -112,8 +113,8 @@ if __name__ == "__main__":
                 lport = config.get(section,options).strip("\"")
                 portlist.append(int(lport))
                 p_no.append(ind)
-                print(portlist)
                 ind += 1
+           print(portlist)
     except:
       print("config file not found")
 
@@ -155,15 +156,12 @@ if __name__ == "__main__":
                if('PLATFORM_'+str(i) == section ):
                   for options in config.options(section):
                      val = config.get(section,options).strip("\"")
+                     if options == 'lport':
+                        if ( int(p) == int(val) ):
+                           return ip
                      if(options == 'to_monitor_ip_addr'):
                         ip = config.get(section,options).strip("\"")
-                        print(ip)
-                        print(p)
-                        print(val)
                         i += 1
-                     if ( p == val ):
-                        print(ip)
-                        return ip
         elif(p.find('THD-O') != -1):
            for spl in p.split():
                for j in p_no:
