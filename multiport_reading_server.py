@@ -15,7 +15,6 @@ from datetime import datetime
 class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 
     def handle(self):
-#        TOM_IP="192.168.0.171"
         today = datetime.now()
 
         self.data = self.request.recv(19200).strip()
@@ -63,14 +62,10 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 update_log_to_SMMS(logs)
 
         if (s.find('THD-ON') != -1):
-                THD_ON = {"status": "start"}
-                Q_THD_ON = parse.urlencode(THD_ON)
-                TOM_IP = PLATFORM_TOM_IP(s)
-                url = "http://" + TOM_IP + "/trainhold.cgi?" + Q_THD_ON
-                send_url_cmd(url)
-                html = send_url_cmd(url)
-                print(html + " " + str(today) + " Train Hold Start")
-                logs = html + " " + str(today) + " Train Hold Start"
+                
+                result_html = TRAIN_HOLD_ON(s)
+                print(result_html + " " + str(today) + " Train Hold ON")
+                logs = result_html + " " + str(today) + " Train Hold ON"
                 log_file(logs)
                 update_log_to_SMMS(logs)
 
@@ -81,10 +76,38 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 url = "http://" + TOM_IP + "/trainhold.cgi?" + Q_THD_OFF
                 send_url_cmd(url)
                 html = send_url_cmd(url)
-                print(html + " " + str(today) + " Train Hold Stop")
-                logs = html + " " + str(today) + " Train Hold Stop"
+                print(html + " " + str(today) + " Train Hold OFF")
+                logs = html + " " + str(today) + " Train Hold OFF"
                 log_file(logs)
                 update_log_to_SMMS(logs)
+
+        if (len(s) >= 6 and (s.find('KP') != -1)):
+                monid = p[2:4]
+                camid = p[4:7]
+                print(camid)
+                try:
+                    pfcsv = open('/home/c4988/share/HOK.txt','r')
+                    for line in pfcsv:
+                        templist = []
+                        for a in line.split(","):
+                            templist.append(a.rstrip("\n"))
+                            if monid in list and camid in list:
+                               ip = config.get("PLATFORM_"+list[0] ,"TO_MONITOR_IP_ADDR").strip('\"')
+                               cam_i = templist.index(camid)
+                finally:
+                    fcsv.close()
+                if int(cam_i) == 1:
+                   result_html = TRAIN_HOLD_ON(ip)
+                   print(result_html + " " + str(today) + " Train Hold ON, selection Cam-ID :"+ camid +"and Mon-ID :"+monid)
+                   logs = result_html + " " + str(today) + " Train Hold ON, selection Cam-ID :"+ camid +"and Mon-ID :"+monid
+                   log_file(logs)
+                   update_log_to_SMMS(logs)
+                elif int(cam_i) == 2:
+                   result_html = TRAIN_HOLD_OFF(ip)
+                   print(result_html + " " + str(today) + " Train Hold OFF, selection Cam-ID :"+ camid +"and Mon-ID :"+monid)
+                   logs = result_html + " " + str(today) + " Train Hold OFF, selection Cam-ID :"+ camid +"and Mon-ID :"+monid
+                   log_file(logs)
+                   update_log_to_SMMS(logs)
 
         self.request.close()
 
@@ -98,7 +121,6 @@ if __name__ == "__main__":
     p_no =[]
     HOST = ''
     cwd = os.getcwd()
-    TOM_IP = "192.168.0.171"
 
     with open(cwd+"/server.ini" ,'r+') as f:
       sample_config = f.read()
@@ -168,6 +190,25 @@ if __name__ == "__main__":
                    if spl in str(j):
                       ip = config.get("PLATFORM_"+spl ,"TO_MONITOR_IP_ADDR").strip('\"') 
                       return ip
+
+    def TRAIN_HOLD_ON(arg):
+        THD_ON = {"status": "start"}
+        Q_THD_ON = parse.urlencode(THD_ON)
+        L_TOM_IP = PLATFORM_TOM_IP(arg)
+        url = "http://" + TOM_IP + "/trainhold.cgi?" + Q_THD_ON
+        send_url_cmd(url)
+        html = send_url_cmd(url)
+        return html
+
+    def TRAIN_HOLD_OFF(arg):
+        THD_ON = {"status": "stop"}
+        Q_THD_ON = parse.urlencode(THD_ON)
+        L_TOM_IP = PLATFORM_TOM_IP(arg)
+        print(list(L_TOM_IP))
+        url = "http://" + TOM_IP + "/trainhold.cgi?" + Q_THD_ON
+        send_url_cmd(url)
+        html = send_url_cmd(url)
+        return html
 
     def create_thread(HOST,PORT):
        server = ThreadedTCPServer((HOST, PORT), ThreadedTCPRequestHandler)
