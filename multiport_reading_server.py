@@ -11,14 +11,16 @@ from urllib.request import urlopen
 from urllib import request
 import paramiko
 from datetime import datetime
+cmd_tic = ''
+elapsed = 0
 
 class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 
     def handle(self):
+      try:
+        global cmd_tic
+        global elapsed
         today = datetime.now()
-        l1 = []
-        cmd_tic = []
-
         while True:
           self.data = self.request.recv(19200).strip()
 #        print("%s wrote: " % self.client_address[0])
@@ -27,14 +29,23 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
           s = ''.join([chr(int(x, 16)) for x in self.data.split()])
           s = s.strip()
           print(s)
-          if (len(s) <= 4 and len(s) == 1 and (s != 'S')):
-             while len(cmd_tic) <= 4:
-                cmd_tic.append(s)
+#          if (len(s) <= 4 and (len(s) == 1 or len(s) == 2) and (s != 'S') and (cmd_tic == '' or cmd_tic[0] == 'L')):
+          try:
+              start = time.time()
+              time.clock()
+              while elapsed <= 10 and len(cmd_tic) <= 4 and len(s) <= 4 and (cmd_tic == '' or cmd_tic[0] == 'L'):
+                cmd_tic += s
+                time.clock()
+                elapsed = time.time() - start
                 print(cmd_tic)
+                s = ''.join(cmd_tic)
                 break
+          except:
+                print("time out")
 
-          print(cmd_tic)
-          s = ''.join(cmd_tic)
+          if len(cmd_tic) == 4:
+             cmd_tic = ''
+
           if (len(s) == 4 and (s.find('L') != -1) and int(s[1:4]) > 0):
                 count_down = {"time": s[1:], "count": "down", "status": "start"}
                 q_count_down = parse.urlencode(count_down)
@@ -59,14 +70,6 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 log_file(logs)
                 update_log_to_SMMS(logs)
                 self.request.send(bytes("K", "ascii"))
-#         if (len(s) < 4 and len(s) == 1 and (s != 'S')):
-#            while l < 5:
-#              l1.append(s)
-#              threading.Timer(5.0,fun)
-#              print(l1)
-#              b = ''.join(l1)
-#              print(b)
-#              l += 1
 
           if ((s.find('S') != -1) and s == 'S'):
                 count_stop = {"status": "stop"}
@@ -124,7 +127,8 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                               update_log_to_SMMS(logs)
                 finally:
                     pfcsv.close()
-          self.request.close()
+      finally:
+        self.request.close()
 
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     pass
