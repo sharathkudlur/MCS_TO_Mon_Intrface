@@ -13,6 +13,7 @@ import paramiko
 from datetime import datetime
 cmd_tic = ''
 elapsed = 0
+ab = [False]
 
 class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 
@@ -20,6 +21,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
       try:
         global cmd_tic
         global elapsed
+        global ab
         today = datetime.now()
         while True:
           self.data = self.request.recv(19200).strip()
@@ -29,19 +31,28 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
           s = ''.join([chr(int(x, 16)) for x in self.data.split()])
           s = s.strip()
           print(s)
-#          if (len(s) <= 4 and (len(s) == 1 or len(s) == 2) and (s != 'S') and (cmd_tic == '' or cmd_tic[0] == 'L')):
-          try:
+          if (len(s) <= 4 and (len(cmd_tic) <= 4) and (s != 'S') and (cmd_tic == '' or cmd_tic[0] == 'L')):
               start = time.time()
               time.clock()
-              while elapsed <= 10 and len(cmd_tic) <= 4 and len(s) <= 4 and (cmd_tic == '' or cmd_tic[0] == 'L'):
-                cmd_tic += s
-                time.clock()
-                elapsed = time.time() - start
-                print(cmd_tic)
-                s = ''.join(cmd_tic)
-                break
-          except:
-                print("time out")
+#             while elapsed <= 1 and len(cmd_tic) <= 4 and len(s) <= 4 and (cmd_tic == '' or cmd_tic[0] == 'L'):
+              cmd_tic += s
+              elapsed = time.time() - start
+              s = ''.join(cmd_tic)
+              e_port = str(self.port)
+              print(e_port)
+              def ERROR():
+                  print("Error")
+                  self.request.send(bytes("E","ascii"))
+              if(len(cmd_tic) < 4):
+                 timer = threading.Timer(10,ERROR)
+                 timer.start()
+#                 while len_cmd == len(cmd_tic):
+#                     len_cmd = len(cmd_tic)
+#                    time.sleep(2)
+#                 self.request.send(bytes("E","ascii"))
+              else:
+                    timer.cancel()
+#              self.request.send(bytes("E","ascii")             
 
           if len(cmd_tic) == 4:
              cmd_tic = ''
@@ -53,7 +64,6 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 print(TOM_IP)
                 url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_down
                 html = send_url_cmd(url)
-                print(html + " " + str(today) + " Time Interval Clock Down Start")
                 logs = html + " " + str(today) + " Time Interval Clock Down Start"
                 log_file(logs)
                 update_log_to_SMMS(logs)
@@ -65,7 +75,6 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 TOM_IP = PLATFORM_TOM_IP(self.port)
                 url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_up
                 html = send_url_cmd(url)
-                print(html + " " + str(today) + " Time Interval Clock Up Start")
                 logs = html + " " + str(today) + " Time Interval Clock Up Start"
                 log_file(logs)
                 update_log_to_SMMS(logs)
@@ -78,7 +87,6 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_stop
                 send_url_cmd(url)
                 html = send_url_cmd(url)
-                print(html + " " + str(today) + " Time Interval Clock Stop")
                 logs = html + " " + str(today) + " Time Interval Clock Stop"
                 log_file(logs)
                 update_log_to_SMMS(logs)
@@ -86,14 +94,12 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
           if (s.find('THD-O') != -1):
                 if (s.find('THD-ON') != -1):
                    result_html = TRAIN_HOLD_ON(s)
-                   print(result_html + " " + str(today) + " Train Hold ON")
                    logs = result_html + " " + str(today) + " Train Hold ON"
                    log_file(logs)
                    update_log_to_SMMS(logs)
                    self.request.send(bytes("THD-ACK", "ascii"))
                 elif (s.find('THD-OFF') != -1):
                    result_html = TRAIN_HOLD_OFF(s)
-                   print(result_html + " " + str(today) + " Train Hold OFF")
                    logs = result_html + " " + str(today) + " Train Hold OFF"
                    log_file(logs)
                    update_log_to_SMMS(logs)
@@ -115,18 +121,18 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                            ip = config.get("PLATFORM_"+templist[0] ,"TO_MONITOR_IP_ADDR").strip('\"')
                            if (templist[1] == camid):  #int(cam_i) == 1:
                               result_html = TRAIN_HOLD_ON(ip)
-                              print(result_html + " " + str(today) + " Train Hold ON, selection Cam-ID :"+ camid +"and Mon-ID :"+monid)
                               logs = result_html + " " + str(today) + " Train Hold ON, selection Cam-ID :"+ camid +"and Mon-ID :"+monid
                               log_file(logs)
                               update_log_to_SMMS(logs)
                            elif (templist[2] == camid):  #int(cam_i) == 2:
                               result_html = TRAIN_HOLD_OFF(ip)
-                              print(result_html + " " + str(today) + " Train Hold OFF, selection Cam-ID :"+ camid +"and Mon-ID :"+monid)
                               logs = result_html + " " + str(today) + " Train Hold OFF, selection Cam-ID :"+ camid +"and Mon-ID :"+monid
                               log_file(logs)
                               update_log_to_SMMS(logs)
                 finally:
                     pfcsv.close()
+      except urllib.error.URLError:
+        print("IP not Found")
       finally:
         self.request.close()
 
@@ -231,6 +237,10 @@ if __name__ == "__main__":
         send_url_cmd(url)
         html = send_url_cmd(url)
         return html
+
+#    def ERROR(ab):
+#        ab[0] = True
+#        print("error")
 
     def create_thread(HOST,PORT):
        server = ThreadedTCPServer((HOST, PORT), ThreadedTCPRequestHandler)
