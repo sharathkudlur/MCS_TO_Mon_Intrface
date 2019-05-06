@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import threading
+from threading import Timer
 import time
 import socketserver
 import configparser
@@ -11,9 +12,19 @@ from urllib.request import urlopen
 from urllib import request
 import paramiko
 from datetime import datetime
+import trace
 cmd_tic = ''
-elapsed = 0
-ab = [False]
+
+class RepeatableTimer(object):
+    def __init__(self, interval, function, args=[], kwargs={}):
+        self._interval = interval
+        self._function = function
+        self._args = args
+        self._kwargs = kwargs
+    def start(self):
+        t = Timer(self._interval, self._function, *self._args, **self._kwargs)
+        t.start()
+
 
 class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 
@@ -21,8 +32,21 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
       try:
         global cmd_tic
         global elapsed
-        global ab
         today = datetime.now()
+
+        def ERROR():
+            global cmd_tic
+            if (cmd_tic[:1] == 'L'):
+               print("Error")
+               self.request.send(bytes("E","ascii"))
+               cmd_tic = ''
+               print(threading.currentThread().getName())
+               print(threading.enumerate())
+            else:
+               cmd_tic = ''
+        timer = Timer(10,ERROR,())
+        timer.setDaemon(True)
+
         while True:
           self.data = self.request.recv(19200).strip()
 #        print("%s wrote: " % self.client_address[0])
@@ -31,31 +55,28 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
           s = ''.join([chr(int(x, 16)) for x in self.data.split()])
           s = s.strip()
           print(s)
+          print(threading.enumerate())
           if (len(s) <= 4 and (len(cmd_tic) <= 4) and (s != 'S') and (cmd_tic == '' or cmd_tic[0] == 'L')):
-              start = time.time()
-              time.clock()
+#              timer = threading.Timer(10,ERROR)
 #             while elapsed <= 1 and len(cmd_tic) <= 4 and len(s) <= 4 and (cmd_tic == '' or cmd_tic[0] == 'L'):
               cmd_tic += s
-              elapsed = time.time() - start
-              s = ''.join(cmd_tic)
               e_port = str(self.port)
               print(e_port)
-              def ERROR():
-                  print("Error")
-                  self.request.send(bytes("E","ascii"))
-              if(len(cmd_tic) < 4):
-                 timer = threading.Timer(10,ERROR)
-                 timer.start()
-#                 while len_cmd == len(cmd_tic):
-#                     len_cmd = len(cmd_tic)
-#                    time.sleep(2)
-#                 self.request.send(bytes("E","ascii"))
-              else:
-                    timer.cancel()
-#              self.request.send(bytes("E","ascii")             
 
-          if len(cmd_tic) == 4:
+              if timer.is_alive() is True:
+                    print("True, timer cancel")
+                    timer.cancel()
+                    print(threading.enumerate())
+              elif len(cmd_tic) < 4 and timer.is_alive() is False and cmd_tic[:1] == 'L':
+                    print("False, timer start")
+                    timer.start()
+                    print(threading.enumerate())
+
+              s = ''.join(cmd_tic)
+              print(s)
+          if len(cmd_tic) == 4 :
              cmd_tic = ''
+             timer.cancel()
 
           if (len(s) == 4 and (s.find('L') != -1) and int(s[1:4]) > 0):
                 count_down = {"time": s[1:], "count": "down", "status": "start"}
@@ -109,24 +130,22 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
           if (len(s) >= 6 and (s.find('KP') != -1)):
                 monid = s[2:4].lstrip("0")
                 camid = s[4:7].lstrip("0")
-                print(camid)
                 try:
                     pfcsv = open('/home/c4988/share/HOK.txt','r')
                     for line in pfcsv:
                         templist = []
                         for a in line.split(","):
                             templist.append(a.rstrip("\n"))
-                            print(a)
                         if monid in templist[3] and (camid in templist[1] or camid in templist[2]):
                            ip = config.get("PLATFORM_"+templist[0] ,"TO_MONITOR_IP_ADDR").strip('\"')
                            if (templist[1] == camid):  #int(cam_i) == 1:
                               result_html = TRAIN_HOLD_ON(ip)
-                              logs = result_html + " " + str(today) + " Train Hold ON, selection Cam-ID :"+ camid +"and Mon-ID :"+monid
+                              logs = result_html + " " + str(today) + " Train Hold ON, selection Cam-ID :"+ camid +" and Mon-ID :"+monid
                               log_file(logs)
                               update_log_to_SMMS(logs)
                            elif (templist[2] == camid):  #int(cam_i) == 2:
                               result_html = TRAIN_HOLD_OFF(ip)
-                              logs = result_html + " " + str(today) + " Train Hold OFF, selection Cam-ID :"+ camid +"and Mon-ID :"+monid
+                              logs = result_html + " " + str(today) + " Train Hold OFF, selection Cam-ID :"+ camid +" and Mon-ID :"+monid
                               log_file(logs)
                               update_log_to_SMMS(logs)
                 finally:
@@ -161,7 +180,7 @@ if __name__ == "__main__":
                 portlist.append(int(lport))
                 p_no.append(ind)
                 ind += 1
-           print(portlist)
+      print(portlist)
     except:
       print("config file not found")
 
@@ -176,7 +195,7 @@ if __name__ == "__main__":
         try:
                 ssh.connect(COMP, username=USER, password=PSW, allow_agent = False)
         except paramiko.SSHException:
-                print("Connectin Failed")
+                print("Connectin Failed to SMMS server")
                 quit()
         print(log_str)
 #       print(LOGP)
@@ -238,15 +257,12 @@ if __name__ == "__main__":
         html = send_url_cmd(url)
         return html
 
-#    def ERROR(ab):
-#        ab[0] = True
-#        print("error")
-
     def create_thread(HOST,PORT):
        server = ThreadedTCPServer((HOST, PORT), ThreadedTCPRequestHandler)
        server_thread = threading.Thread(target=server.serve_forever)
        server_thread.setDaemon(True)
        server_thread.start()
+       server_thread.join()
      
     for port in portlist:
        create_thread(HOST,port)
