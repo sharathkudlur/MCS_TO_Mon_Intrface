@@ -6,6 +6,7 @@ import time
 import socketserver
 import configparser
 import os
+import sys
 import urllib
 from urllib import parse
 from urllib.request import urlopen
@@ -13,6 +14,7 @@ from urllib import request
 import paramiko
 from datetime import datetime
 import trace
+import socket
 cmd_tic = ''
 
 class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
@@ -20,43 +22,50 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
     def handle(self):
       try:
         global cmd_tic
-        global elapsed
         today = datetime.now()
-
-        def ERROR():
+        while True:
+          def ERROR(address,port):
             global cmd_tic
             if (cmd_tic[:1] == 'L'):
-               print("Error")
-               self.request.send(bytes("E","ascii"))
                cmd_tic = ''
-               print(threading.currentThread().getName())
+               print("Error")
                print(threading.enumerate())
                timer.cancel()
+#               s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+               self.request.send(bytes("E","ascii"))
+               print(threading.currentThread().getName())
+               print(threading.enumerate())
+#               python=sys.executable
+#              os.execl(python, python, * sys.argv)
             else:
                cmd_tic = ''
-
-        while True:
-          timer = Timer(10,ERROR,())
-          timer.setDaemon(True)
           self.data = self.request.recv(19200).strip()
-#        print("%s wrote: " % self.client_address[0])
+          print("%s wrote: " % str(self.client_address))
           self.port = self.request.getsockname()[1]
+#          print("%s : " % self.client_address[1])
           print (self.data)
           s = ''.join([chr(int(x, 16)) for x in self.data.split()])
           s = s.strip()
           print(s)
-          if (len(s) <= 4 and (len(cmd_tic) <= 4) and (s != 'S') and (cmd_tic == '' or cmd_tic[0] == 'L')):
+          timer = Timer(10,ERROR,args=(self.client_address[0],self.client_address[1],))
+#          timer.setDaemon(True)
+          while timer.is_alive():
+             timer.cancel()
+          print(len(s),len(cmd_tic),cmd_tic,cmd_tic[:1])
+          if (len(s) <= 4 and (len(cmd_tic) <= 4) and (s != 'S') and (cmd_tic == '' or cmd_tic[:1] == 'L')):
               cmd_tic += s
               e_port = str(self.port)
               print(e_port)
 
-              if len(cmd_tic) < 4 and timer.is_alive() is False and cmd_tic[:1] == 'L':
+              if len(cmd_tic) < 4 and cmd_tic[:1] == 'L':
                     print("False, timer start")
                     timer.start()
 
               s = ''.join(cmd_tic)
+              if cmd_tic[:1] != 'L':
+                 cmd_tic = ''
               print(s)
-          if len(cmd_tic) == 4 :
+          if len(cmd_tic) >= 4 :
              cmd_tic = ''
              timer.cancel()
 
@@ -76,6 +85,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 count_up = {"time": s[1:], "count": "up", "status": "start"}
                 q_count_up = parse.urlencode(count_up)
                 TOM_IP = PLATFORM_TOM_IP(self.port)
+                print(TOM_IP)
                 url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_up
                 html = send_url_cmd(url)
                 logs = html + " " + str(today) + " Time Interval Clock Up Start"
@@ -87,6 +97,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 count_stop = {"status": "stop"}
                 q_count_stop = parse.urlencode(count_stop)
                 TOM_IP = PLATFORM_TOM_IP(self.port)
+                print(TOM_IP)
                 url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_stop
                 send_url_cmd(url)
                 html = send_url_cmd(url)
@@ -112,8 +123,10 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
           if (len(s) >= 6 and (s.find('KP') != -1)):
                 monid = s[2:4].lstrip("0")
                 camid = s[4:7].lstrip("0")
+                THD_DIR = config.get("CONF","DIR").strip('\"')
+                FTHD_INF = config.get("CONF","FILE_THD_INFO").strip('\"')
                 try:
-                    pfcsv = open('/home/c4988/share/HOK.txt','r')
+                    pfcsv = open(THD_DIR+"/"+FTHD_INF,'r')
                     for line in pfcsv:
                         templist = []
                         for a in line.split(","):
@@ -224,6 +237,7 @@ if __name__ == "__main__":
         THD_ON = {"status": "start"}
         Q_THD_ON = parse.urlencode(THD_ON)
         L_TOM_IP = PLATFORM_TOM_IP(arg)
+        print(L_TOM_IP)
         url = "http://" + L_TOM_IP + "/trainhold.cgi?" + Q_THD_ON
         send_url_cmd(url)
         html = send_url_cmd(url)
@@ -244,7 +258,6 @@ if __name__ == "__main__":
        server_thread = threading.Thread(target=server.serve_forever)
        server_thread.setDaemon(True)
        server_thread.start()
-       server_thread.join()
      
     for port in portlist:
        create_thread(HOST,port)
