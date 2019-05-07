@@ -15,17 +15,6 @@ from datetime import datetime
 import trace
 cmd_tic = ''
 
-class RepeatableTimer(object):
-    def __init__(self, interval, function, args=[], kwargs={}):
-        self._interval = interval
-        self._function = function
-        self._args = args
-        self._kwargs = kwargs
-    def start(self):
-        t = Timer(self._interval, self._function, *self._args, **self._kwargs)
-        t.start()
-
-
 class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 
     def handle(self):
@@ -42,12 +31,13 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                cmd_tic = ''
                print(threading.currentThread().getName())
                print(threading.enumerate())
+               timer.cancel()
             else:
                cmd_tic = ''
-        timer = Timer(10,ERROR,())
-        timer.setDaemon(True)
 
         while True:
+          timer = Timer(10,ERROR,())
+          timer.setDaemon(True)
           self.data = self.request.recv(19200).strip()
 #        print("%s wrote: " % self.client_address[0])
           self.port = self.request.getsockname()[1]
@@ -55,22 +45,14 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
           s = ''.join([chr(int(x, 16)) for x in self.data.split()])
           s = s.strip()
           print(s)
-          print(threading.enumerate())
           if (len(s) <= 4 and (len(cmd_tic) <= 4) and (s != 'S') and (cmd_tic == '' or cmd_tic[0] == 'L')):
-#              timer = threading.Timer(10,ERROR)
-#             while elapsed <= 1 and len(cmd_tic) <= 4 and len(s) <= 4 and (cmd_tic == '' or cmd_tic[0] == 'L'):
               cmd_tic += s
               e_port = str(self.port)
               print(e_port)
 
-              if timer.is_alive() is True:
-                    print("True, timer cancel")
-                    timer.cancel()
-                    print(threading.enumerate())
-              elif len(cmd_tic) < 4 and timer.is_alive() is False and cmd_tic[:1] == 'L':
+              if len(cmd_tic) < 4 and timer.is_alive() is False and cmd_tic[:1] == 'L':
                     print("False, timer start")
                     timer.start()
-                    print(threading.enumerate())
 
               s = ''.join(cmd_tic)
               print(s)
