@@ -29,7 +29,6 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
             if (cmd_tic[:1] == 'L'):
                cmd_tic = ''
                print("Error")
-               print(threading.enumerate())
                timer.cancel()
 #               s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
                self.request.send(bytes("E","ascii"))
@@ -37,7 +36,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                cmd_tic = ''
           self.data = self.request.recv(19200).strip()
           print("%s wrote: " % str(self.client_address))
-#          self.port = self.request.getsockname()[1]
+          self.port = self.request.getsockname()[1]
 #          print("%s : " % self.client_address[1])
           print (self.data)
           s = ''.join([chr(int(x, 16)) for x in self.data.split()])
@@ -46,14 +45,12 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
           timer = Timer(1,ERROR,args=(self.client_address[0],self.client_address[1],))
           while timer.is_alive():
              timer.cancel()
-          print(len(s),len(cmd_tic),cmd_tic,cmd_tic[:1])
           if (len(s) <= 4 and (len(cmd_tic) <= 4) and (s != 'S') and (cmd_tic == '' or cmd_tic[:1] == 'L')):
               cmd_tic += s
 #              e_port = str(self.port)
 #              print(e_port)
 
               if len(cmd_tic) < 4 and cmd_tic[:1] == 'L':
-                    print("False, timer start")
                     timer.start()
 
               s = ''.join(cmd_tic)
