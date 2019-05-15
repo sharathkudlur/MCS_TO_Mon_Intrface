@@ -241,3 +241,20 @@
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:31:03.919757 Time Interval Clock Up Start
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:31:03.919757 Time Interval Clock Up Start
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:31:03.919757 Time Interval Clock Stop
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-05-08 11:44:41.464910 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:44:41.464910 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:44:41.464910 Train Hold ON
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-05-08 11:44:41.464910 Train Hold OFF
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:44:41.596246 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:44:41.596246 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:44:41.596246 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 12:53:00.185280 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 12:53:00.185280 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 12:53:00.185280 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 12:53:00.185280 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 12:53:00.185280 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-10 10:15:44.053290 Time Interval Clock Up Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-14 15:39:11.433769 Train Hold ON
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-05-14 15:39:11.433769 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-14 15:39:11.433769 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-14 17:54:59.608508 Time Interval Clock Down Start

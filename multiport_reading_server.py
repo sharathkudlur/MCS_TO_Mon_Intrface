@@ -138,7 +138,9 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 finally:
                     pfcsv.close()
       except urllib.error.URLError:
-        print("IP not Found")
+        print("TO Monitor IP not Found")
+      except ConnectionResetError:
+        print("Serial I/O Device Reconnected!")
       finally:
         self.request.close()
 
@@ -182,7 +184,7 @@ if __name__ == "__main__":
         try:
                 ssh.connect(COMP, username=USER, password=PSW, allow_agent = False)
         except paramiko.SSHException:
-                print("Connectin Failed to SMMS server")
+                print("Failed to Connect SMMS server!")
                 quit()
         print(log_str)
 #       print(LOGP)
@@ -226,6 +228,7 @@ if __name__ == "__main__":
            return p
 
     def TRAIN_HOLD_ON(arg):
+      try:
         THD_ON = {"status": "start"}
         Q_THD_ON = parse.urlencode(THD_ON)
         L_TOM_IP = PLATFORM_TOM_IP(arg)
@@ -234,8 +237,12 @@ if __name__ == "__main__":
         send_url_cmd(url)
         html = send_url_cmd(url)
         return html
+      except TypeError:
+          print("Platform Number not defined in Config file")
+          exit()
 
     def TRAIN_HOLD_OFF(arg):
+      try:
         THD_OFF = {"status": "stop"}
         Q_THD_OFF = parse.urlencode(THD_OFF)
         L_TOM_IP = PLATFORM_TOM_IP(arg)
@@ -244,13 +251,16 @@ if __name__ == "__main__":
         send_url_cmd(url)
         html = send_url_cmd(url)
         return html
+      except TypeError:
+          print("Platform Number not defined in Config file")
+          exit()
 
     def create_thread(HOST,PORT):
-       server = ThreadedTCPServer((HOST, PORT), ThreadedTCPRequestHandler)
-       server_thread = threading.Thread(target=server.serve_forever)
-       server_thread.setDaemon(True)
-       server_thread.start()
-     
+         server = ThreadedTCPServer((HOST, PORT), ThreadedTCPRequestHandler)
+         server_thread = threading.Thread(target=server.serve_forever)
+         server_thread.setDaemon(True)
+         server_thread.start()
+
     for port in portlist:
        create_thread(HOST,port)
 
