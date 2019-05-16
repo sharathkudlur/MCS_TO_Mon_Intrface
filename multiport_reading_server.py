@@ -24,16 +24,15 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
         global cmd_tic
         today = datetime.now()
         while True:
-          def ERROR(address,port):
-            global cmd_tic
-            if (cmd_tic[:1] == 'L'):
-               cmd_tic = ''
-               print("Error")
-               timer.cancel()
-#               s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-               self.request.send(bytes("E","ascii"))
-            else:
-               cmd_tic = ''
+          def ERROR(request):
+             global cmd_tic
+             if (cmd_tic[:1] == 'L'):
+                cmd_tic = ''
+                print("Error")
+                timer.cancel()
+                request.send(bytes("E","ascii"))
+             else:
+                cmd_tic = ''
           self.data = self.request.recv(19200).strip()
           print("%s wrote: " % str(self.client_address))
           self.port = self.request.getsockname()[1]
@@ -42,17 +41,13 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
           s = ''.join([chr(int(x, 16)) for x in self.data.split()])
           s = s.strip()
           print(s)
-          timer = Timer(1,ERROR,args=(self.client_address[0],self.client_address[1],))
+          timer = Timer(10,ERROR,args=(self.request,))
           while timer.is_alive():
              timer.cancel()
           if (len(s) <= 4 and (len(cmd_tic) <= 4) and (s != 'S') and (cmd_tic == '' or cmd_tic[:1] == 'L')):
               cmd_tic += s
-#              e_port = str(self.port)
-#              print(e_port)
-
               if len(cmd_tic) < 4 and cmd_tic[:1] == 'L':
                     timer.start()
-
               s = ''.join(cmd_tic)
               if cmd_tic[:1] != 'L':
                  cmd_tic = ''
@@ -147,6 +142,19 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     pass
 
+def clientfun(address,port):
+            global cmd_tic
+            print(address,port)
+            if (cmd_tic[:1] == 'L'):
+#               cmd_tic = ''
+               print("Error")
+#               timer.cancel()
+#               s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#               s.connect((address,port))
+               s.send(bytes("E","ascii"),)
+               httpd.close()
+            else:
+               cmd_tic = ''
 
 if __name__ == "__main__":
 
