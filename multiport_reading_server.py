@@ -63,7 +63,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 print(TOM_IP)
                 url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_down
                 html = send_url_cmd(url)
-                logs = html + " " + str(today) + " Time Interval Clock Down Start"
+                logs = html + " " +  TOM_IP + " " + str(today) + " Time Interval Clock Down Start"
                 log_file(logs)
                 update_log_to_SMMS(logs)
                 self.request.send(bytes("K", "ascii"))
@@ -75,7 +75,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 print(TOM_IP)
                 url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_up
                 html = send_url_cmd(url)
-                logs = html + " " + str(today) + " Time Interval Clock Up Start"
+                logs = html + " " + TOM_IP + " " +str(today) + " Time Interval Clock Up Start"
                 log_file(logs)
                 update_log_to_SMMS(logs)
                 self.request.send(bytes("K", "ascii"))
@@ -88,7 +88,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 url = "http://" + TOM_IP + "/TIC.cgi?" + q_count_stop
                 send_url_cmd(url)
                 html = send_url_cmd(url)
-                logs = html + " " + str(today) + " Time Interval Clock Stop"
+                logs = html + " " + TOM_IP + " " +str(today) + " Time Interval Clock Stop"
                 log_file(logs)
                 update_log_to_SMMS(logs)
 
@@ -208,7 +208,6 @@ if __name__ == "__main__":
     def send_url_cmd(string):
         result = urllib.request.urlopen(string)
         html = result.read().decode("UTF-8")
-        print(html)
         return html
 
     def PLATFORM_TOM_IP(p):
@@ -244,7 +243,7 @@ if __name__ == "__main__":
         url = "http://" + L_TOM_IP + "/trainhold.cgi?" + Q_THD_ON
         send_url_cmd(url)
         html = send_url_cmd(url)
-        return html
+        return html + " " + L_TOM_IP
       except TypeError:
           print("Platform Number not defined in Config file")
           exit()
@@ -258,7 +257,7 @@ if __name__ == "__main__":
         url = "http://" + L_TOM_IP + "/trainhold.cgi?" + Q_THD_OFF
         send_url_cmd(url)
         html = send_url_cmd(url)
-        return html
+        return html + " " + L_TOM_IP
       except TypeError:
           print("Platform Number not defined in Config file")
           exit()

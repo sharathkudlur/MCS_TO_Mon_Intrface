@@ -260,3 +260,10 @@
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-14 17:54:59.608508 Time Interval Clock Down Start
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-15 12:08:50.173957 Time Interval Clock Down Start
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-16 10:18:02.013294 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-16 11:31:27.488749 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:10:35.450175 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:10:35.450175 Time Interval Clock Stop
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:10:35.450175 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:10:35.450175 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:10:35.450175 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:24:10.689875 Train Hold OFF
