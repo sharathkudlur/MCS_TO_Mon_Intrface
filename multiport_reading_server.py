@@ -91,6 +91,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                 logs = html + " " + TOM_IP + " " +str(today) + " Time Interval Clock Stop"
                 log_file(logs)
                 update_log_to_SMMS(logs)
+                self.request.send(bytes("K", "ascii"))
 
           if (s.find('THD-O') != -1):
                 if (s.find('THD-ON') != -1):
@@ -104,7 +105,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                    logs = result_html + " " + str(today) + " Train Hold OFF"
                    log_file(logs)
                    update_log_to_SMMS(logs)
-                   self.request.send(bytes("THD-NAK", "ascii"))
+                   self.request.send(bytes("THD-ACK", "ascii"))
 
 
           if (len(s) >= 6 and (s.find('KP') != -1)):
@@ -141,20 +142,6 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     pass
-
-def clientfun(address,port):
-            global cmd_tic
-            print(address,port)
-            if (cmd_tic[:1] == 'L'):
-#               cmd_tic = ''
-               print("Error")
-#               timer.cancel()
-#               s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#               s.connect((address,port))
-               s.send(bytes("E","ascii"),)
-               httpd.close()
-            else:
-               cmd_tic = ''
 
 if __name__ == "__main__":
 
@@ -195,7 +182,6 @@ if __name__ == "__main__":
                 print("Failed to Connect SMMS server!")
                 quit()
         print(log_str)
-#       print(LOGP)
         stdin,stdout,stderr = ssh.exec_command("cd " + LOGP +" && d: && echo \"" +  log_str  +"\" >> server_cmd_prg.txt")
         for line in stdout.readlines():
                 print(line.strip())
@@ -207,8 +193,7 @@ if __name__ == "__main__":
 
     def send_url_cmd(string):
         result = urllib.request.urlopen(string)
-        html = result.read().decode("UTF-8")
-        return html
+        return result.read().decode("UTF-8")
 
     def PLATFORM_TOM_IP(p):
         i = 1
@@ -241,7 +226,6 @@ if __name__ == "__main__":
         L_TOM_IP = PLATFORM_TOM_IP(arg)
         print(L_TOM_IP)
         url = "http://" + L_TOM_IP + "/trainhold.cgi?" + Q_THD_ON
-        send_url_cmd(url)
         html = send_url_cmd(url)
         return html + " " + L_TOM_IP
       except TypeError:
@@ -255,7 +239,6 @@ if __name__ == "__main__":
         L_TOM_IP = PLATFORM_TOM_IP(arg)
         print(L_TOM_IP)
         url = "http://" + L_TOM_IP + "/trainhold.cgi?" + Q_THD_OFF
-        send_url_cmd(url)
         html = send_url_cmd(url)
         return html + " " + L_TOM_IP
       except TypeError:

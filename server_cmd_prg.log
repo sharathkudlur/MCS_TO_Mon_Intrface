@@ -267,3 +267,13 @@
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:10:35.450175 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:10:35.450175 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:24:10.689875 Train Hold OFF
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:24:43.078745 Train Hold ON
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:24:43.078745 Train Hold OFF
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:40:33.118368 Train Hold ON
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:40:33.118368 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:40:33.118368 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:40:33.118368 Train Hold OFF
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:40:33.118368 Train Hold OFF
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:43:18.591758 Train Hold OFF
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:43:18.591758 Time Interval Clock Down Start
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TICSignal Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:43:18.591758 Time Interval Clock Stop
