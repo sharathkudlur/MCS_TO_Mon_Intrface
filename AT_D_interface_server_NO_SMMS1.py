@@ -15,6 +15,7 @@ import paramiko
 from datetime import datetime
 import trace
 import socket
+import logging
 import re
 cmd_tic = ''
 
@@ -177,8 +178,14 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 #                    pfcsv.close()
       except urllib.error.URLError:
         print("TO Monitor IP not Found")
+        logs = "TO Monitor IP not Found"
+        log_file(logs)
       except ConnectionResetError:
         print("Serial I/O Device Reconnected!")
+        logs = "Serial I/O Device Reconnected!"
+        log_file(logs)
+      except Exception as e:
+         log_file("<p>Error: %s</p>"% str(e))
       finally:
         self.request.close()
 
@@ -191,6 +198,11 @@ if __name__ == "__main__":
     p_no =[]
     HOST = ''
     cwd = os.getcwd()
+
+    def log_file(logs):
+        f = open(cwd+"/server_cmd_prg.log", "a+")
+        f.write(logs)
+        f.write("\n")
 
     with open(cwd+"/server.ini" ,'r+') as f:
       sample_config = f.read()
@@ -209,35 +221,41 @@ if __name__ == "__main__":
       print(portlist)
     except:
       print("config file not found")
+      logs = "config file not found"
+      log_file(logs)
+      
 
-    COMP = config.get("SMMS_INFO","HOST_IP").strip('\"')
-    USER = config.get("SMMS_INFO","USER_NAME").strip('\"')
-    PSW = config.get("SMMS_INFO","PASSWORD").strip('\"')
-    LOGP = config.get("SMMS_INFO","LOG_FILE_PATH").strip('\"')
+#    COMP = config.get("SMMS_INFO","HOST_IP").strip('\"')
+#    USER = config.get("SMMS_INFO","USER_NAME").strip('\"')
+#    PSW = config.get("SMMS_INFO","PASSWORD").strip('\"')
+#    LOGP = config.get("SMMS_INFO","LOG_FILE_PATH").strip('\"')
 
     def update_log_to_SMMS(log_str):
-        ssh = paramiko.SSHClient()
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        try:
-                ssh.connect(COMP, username=USER, password=PSW, allow_agent = False)
-        except paramiko.SSHException:
-                print("Failed to Connect SMMS server!")
-                quit()
+#        ssh = paramiko.SSHClient()
+#        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+#        try:
+#                ssh.connect(COMP, username=USER, password=PSW, allow_agent = False)
+#        except paramiko.SSHException:
+#                print("Failed to Connect SMMS server!")
+#                logs = "Failed to Connect SMMS server!"
+#                log_file(logs)
+#                quit()
         print(log_str)
-        stdin,stdout,stderr = ssh.exec_command("cd " + LOGP +" && d: && echo \"" +  log_str  +"\" >> server_cmd_prg.txt")
-        for line in stdout.readlines():
-                print(line.strip())
-        ssh.close()
+#        stdin,stdout,stderr = ssh.exec_command("cd " + LOGP +" && d: && echo \"" +  log_str  +"\" >> server_cmd_prg.txt")
+#        for line in stdout.readlines():
+#                print(line.strip())
+#        ssh.close()
 
-    def log_file(logs):
-        f = open(cwd+"/server_cmd_prg.log", "a+")
-        f.write(logs + "\n")
 
     def send_url_cmd(string):
+      try:
         result = urllib.request.urlopen(string)
         return result.read().decode("UTF-8")
+      except Exception as e:
+        log_file("<p>Error: %s</p>"% str(e))
 
     def PLATFORM_TOM_IP(p):
+      try:
         i = 1
         if p in portlist:
            print(p)
@@ -260,6 +278,8 @@ if __name__ == "__main__":
         elif (p.find('.') != -1):
            print(p)
            return p
+      except Exception as e:
+        log_file("<p>Error: %s</p>"% str(e))
 
     def TRAIN_HOLD_ON(arg):
       try:
@@ -271,7 +291,9 @@ if __name__ == "__main__":
         html = send_url_cmd(url)
         return html + " " + L_TOM_IP
       except TypeError:
-          print("Platform Number not defined in Config file")
+          print("Platform Number not defined in file Train Hold information")
+          logs = "Platform Number not defined in file Train Hold information"
+          log_file(logs)
           exit()
 
     def TRAIN_HOLD_OFF(arg):
@@ -284,14 +306,19 @@ if __name__ == "__main__":
         html = send_url_cmd(url)
         return html + " " + L_TOM_IP
       except TypeError:
-          print("Platform Number not defined in Config file")
+          print("Platform Number not defined in file Train Hold information")
+          logs = "Platform Number not defined in file Train Hold information"
+          log_file(logs)
           exit()
 
     def create_thread(HOST,PORT):
+      try:
          server = ThreadedTCPServer((HOST, PORT), ThreadedTCPRequestHandler)
          server_thread = threading.Thread(target=server.serve_forever)
          server_thread.setDaemon(True)
          server_thread.start()
+      except Exception as e:
+         log_file("<p>Error: %s</p>"% str(e))
 
     for port in portlist:
        create_thread(HOST,port)
