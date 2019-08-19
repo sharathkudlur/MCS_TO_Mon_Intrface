@@ -1,305 +1,139 @@
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Mar 19 12:34:58 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Mar 22 14:26:16 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Mar 22 14:26:53 HKT 2019 Time Interval Clock Down Start - Monitor-ID: 02 Camara-ID: 002
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Mar 22 15:06:39 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Mar 22 15:07:16 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Mar 22 15:12:38 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Mar 25 14:59:11 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Mar 25 14:59:26 HKT 2019 Time Interval Clock Down Start - Monitor-ID: 02 Camara-ID: 002
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Mar 25 14:59:54 HKT 2019 Time Interval Clock Stop - Monitor-ID: 03 Camara-ID: 003
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Mar 25 15:02:19 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Mar 25 15:06:45 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Mar 26 14:40:47 HKT 2019 Train Approaching Off - Monitor-ID: 05 Camara-ID: 005
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Mar 26 14:43:03 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Mar 29 14:05:39 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Mar 29 14:06:52 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Apr 1 11:03:45 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Apr 1 11:04:53 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Apr 1 11:10:16 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Apr 1 11:37:34 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 2 12:20:26 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 2 12:22:02 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 2 12:22:30 HKT 2019 Train Hold Off - Monitor-ID: 54 Camara-ID: 087
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Apr  8 16:58:55 2019 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Mon Apr  8 16:58:55 2019 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 10:08:28.246377 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 10:08:28.246377 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 10:36:48.488331 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 10:36:48.488331 Time Interval Clock Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 10:36:48.488331 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 10:36:48.488331 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 9 14:56:21 HKT 2019 Time Interval Clock Up Start - Monitor-ID: 01 Camara-ID: 001
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 9 14:56:57 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 9 15:05:43 HKT 2019 Train Hold Off - Monitor-ID: 54 Camara-ID: 087
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 15:03:02.013893 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 15:16:28.252176 Time Interval Clock Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-09 15:16:28.252176 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Tue Apr 9 15:17:56 HKT 2019 Time Interval Clock Down Start - Monitor-ID: 02 Camara-ID: 002
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TICSignal Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-04-09 15:16:28.252176 Time Interval Clock Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 11:58:08.816392 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 12:04:27.192228 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 12:13:23.241859 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 12:20:08.901306 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 13:58:10.786762 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 15:08:22.639293 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 15:17:56.548007 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 15:59:38.938096 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 16:29:45.260703 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 16:37:35.707487 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 16:44:56.819888 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 16:47:13.231377 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 16:53:04.793915 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 17:13:26.736993 Train Hold Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-11 17:13:26.736993 Train Hold Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 12:16:10.909778 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 13:47:31.630886 Train Hold Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 13:47:31.630886 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 13:47:31.630886 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 13:47:31.630886 Train Hold Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Apr 12 13:51:24 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Apr 12 14:01:13 HKT 2019 Train Hold Off - Monitor-ID: 54 Camara-ID: 087
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 14:18:25.026208 Train Hold Start
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-04-12 14:18:25.026208 Train Hold Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> Fri Apr 12 14:21:59 HKT 2019 Train Hold On - Monitor-ID: 54 Camara-ID: 088
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-12 14:18:25.026208 Train Hold Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 14:09:26.713057 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 14:09:50.597561 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 14:11:11.356873 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 14:11:19.276802 Time Interval Clock Up Start
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TICSignal Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-04-18 14:13:49.382897 Time Interval Clock Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 14:14:36.234480 Time Interval Clock Stop
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-04-18 15:55:44.599825 Train Hold Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 15:56:37.782152 Train Hold Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 15:59:48.664368 Train Hold Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-18 16:58:08.211209 Train Hold Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-25 17:26:18.051463 Train Hold Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-25 17:32:39.391193 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-25 17:32:54.617326 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-25 17:41:28.078087 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-25 17:42:35.699678 Train Hold Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-25 17:42:51.113467 Train Hold Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-26 14:40:14.907442 Train Hold ON
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 10:42:50.229262 Train Hold ON, selection Cam-ID :111and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 10:47:29.255635 Train Hold ON, selection Cam-ID :111and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:03:21.570811 Train Hold ON, selection Cam-ID :111and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:29:56.431880 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:30:29.005402 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:35:53.682906 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:35:58.907220 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:35:58.907220 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:36:07.717557 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:36:07.717557 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:39:28.589480 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:39:38.593062 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:41:18.304321 Train Hold ON
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:41:36.531243 Train Hold OFF
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 11:49:22.893404 Train Hold OFF, selection Cam-ID :1and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 16:03:52.099031 Train Hold ON, selection Cam-ID :111and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-04-30 17:47:52.177552 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 11:28:26.121248 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 11:43:53.204719 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 11:44:06.346646 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 11:49:16.589435 Time Interval Clock Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 11:50:37.460682 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 11:51:00.566957 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 11:59:02.644457 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 11:59:02.644457 Time Interval Clock Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 11:59:02.644457 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 13:31:04.645892 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 13:31:04.645892 Train Hold ON, selection Cam-ID :111and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 13:31:04.645892 Train Hold OFF, selection Cam-ID :1and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 14:53:29.276574 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 14:53:29.276574 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 15:00:16.695364 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 15:00:16.695364 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 15:00:16.695364 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 15:00:16.695364 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 15:03:47.008546 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 15:54:46.948615 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 15:54:46.948615 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 15:58:14.591678 Train Hold ON
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-02 15:58:14.591678 Train Hold OFF
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 10:50:39.296364 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 11:07:30.178448 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 11:10:35.892225 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 11:17:01.572616 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 11:20:18.398107 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 11:24:51.495537 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 11:39:32.028852 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 11:39:32.028852 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 11:39:32.028852 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 11:44:41.086481 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 14:05:01.339868 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 14:05:01.339868 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 14:08:11.232550 Train Hold ON, selection Cam-ID :111and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 14:08:11.232550 Train Hold OFF, selection Cam-ID :1and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 14:13:22.148074 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 14:14:45.028890 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 15:32:31.314527 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 15:38:34.328298 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 15:38:34.328298 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-03 17:55:33.585125 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 10:05:23.788446 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 10:46:51.682943 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 11:00:04.106176 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 11:00:04.106176 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 11:00:04.106176 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 11:00:04.106176 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 11:00:04.106176 Train Hold ON, selection Cam-ID :111and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 11:33:05.161797 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 11:47:56.179219 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 11:47:56.179219 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 11:54:04.675817 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 12:13:57.049954 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 12:25:41.144591 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 14:20:52.191531 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 14:21:10.375538 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 14:21:42.609287 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 14:39:29.769248 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 15:23:54.264961 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 15:24:07.604407 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 15:24:37.201981 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 15:25:04.401841 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 15:26:47.448506 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 15:27:17.344054 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 15:27:17.344054 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 15:46:40.399120 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 15:59:21.463147 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 16:03:31.676553 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 16:04:52.294863 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 16:36:44.187404 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 16:36:44.187404 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 16:37:40.052278 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 16:40:20.610633 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 16:49:18.003785 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 17:25:21.255528 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 17:46:11.152528 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 17:49:43.237831 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 17:50:05.092989 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 17:50:05.092989 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 17:51:59.197401 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 17:51:59.197401 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 17:56:05.433916 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 18:08:54.519513 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-06 18:11:29.516445 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 09:49:38.866545 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 10:04:09.646582 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 10:14:46.252232 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 10:19:51.307667 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 10:31:12.265314 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 10:31:12.265314 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-05-07 10:31:12.265314 Train Hold ON
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 10:31:12.265314 Train Hold OFF
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 10:33:41.932846 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 10:50:07.706822 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 10:50:07.706822 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 10:56:14.907942 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 11:24:01.108744 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 11:46:37.096618 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 11:50:09.476587 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 11:54:03.384997 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 11:54:03.384997 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 12:05:18.732944 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 12:19:17.001018 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 12:25:22.313259 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 12:35:40.003916 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 13:51:23.255210 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 13:54:28.184565 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 13:55:50.175642 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 14:06:26.936204 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 14:12:49.501227 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 14:12:58.285889 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 14:21:51.959786 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 14:28:56.902778 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 14:30:32.813841 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 14:39:50.164710 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 14:41:26.350493 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 14:41:38.548145 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 14:48:14.766164 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 14:48:50.872568 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 14:52:55.446812 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 15:16:55.675111 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 15:50:35.811602 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 15:53:13.986989 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 15:55:14.150515 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 15:59:11.458370 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-05-07 15:59:11.466892 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 15:59:11.466892 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-05-07 15:59:11.458370 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 16:18:54.928198 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 16:18:54.928198 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 16:18:54.928198 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 16:18:54.928198 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 16:18:54.928198 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-07 16:18:54.928198 Time Interval Clock Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 10:35:12.352981 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 10:35:12.352981 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 10:35:12.352981 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 10:35:12.352981 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 10:35:12.352981 Train Hold ON
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 10:35:12.352981 Train Hold OFF
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:31:03.919757 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:31:03.919757 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:31:03.919757 Time Interval Clock Stop
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-05-08 11:44:41.464910 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:44:41.464910 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:44:41.464910 Train Hold ON
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-05-08 11:44:41.464910 Train Hold OFF
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:44:41.596246 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:44:41.596246 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 11:44:41.596246 Time Interval Clock Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 12:53:00.185280 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 12:53:00.185280 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 12:53:00.185280 Time Interval Clock Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 12:53:00.185280 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-08 12:53:00.185280 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-10 10:15:44.053290 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-14 15:39:11.433769 Train Hold ON
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 2019-05-14 15:39:11.433769 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-14 15:39:11.433769 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-14 17:54:59.608508 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-15 12:08:50.173957 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-16 10:18:02.013294 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 2019-05-16 11:31:27.488749 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:10:35.450175 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:10:35.450175 Time Interval Clock Stop
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:10:35.450175 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:10:35.450175 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:10:35.450175 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-16 12:24:10.689875 Train Hold OFF
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TrainHold Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:24:43.078745 Train Hold ON
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:24:43.078745 Train Hold OFF
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:40:33.118368 Train Hold ON
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:40:33.118368 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:40:33.118368 Train Hold OFF, selection Cam-ID :1 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:40:33.118368 Train Hold OFF
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:40:33.118368 Train Hold OFF
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:43:18.591758 Train Hold OFF
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:43:18.591758 Time Interval Clock Down Start
-<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TICSignal Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 14:43:18.591758 Time Interval Clock Stop
-
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 15:43:56.615482 Time Interval Clock Down Start
-
-
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-05-17 15:43:56.615482 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-06-24 10:20:05.626063 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-06-24 10:20:05.626063 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-07-23 15:57:50.599802 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-07-23 15:57:50.599802 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-07-25 16:42:21.060136 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-07-25 16:42:21.060136 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-05 15:36:02.438608 Time Interval Clock Down Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-05 16:46:19.280026 Time Interval Clock Up Start
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-05 16:46:19.280026 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-05 17:37:14.968050 Train Hold ON, selection Cam-ID :111 and Mon-ID :52
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-06 15:12:20.048448 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-06 15:12:20.048448 Train Hold OFF, selection Cam-ID :1 and Mon-ID :8
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-06 15:12:20.048448 Train Hold OFF, selection Cam-ID :1 and Mon-ID :8
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-06 15:12:20.048448 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-07 11:04:12.103506 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-07 11:04:12.103506 Train Hold OFF, selection Cam-ID :1 and Mon-ID :8
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-07 11:04:12.103506 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-07 11:04:12.103506 Train Hold OFF
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-07 11:04:12.103506 Train Hold ON
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-07 11:04:12.103506 Time Interval Clock Stop
-<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-07 11:04:12.103506 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 14:55:54.655366 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 14:55:54.655366 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TICSignal Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 15:00:31.469652 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 15:00:31.469652 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 15:12:41.093154 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+THD-ON 2 :Error: Platform Number not defined in file Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 15:29:02.668724 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 15:33:10.361949 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0xfe in position 1: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0x82 in position 2: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xe0 in position 1: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 15:52:40.000710 Time Interval Clock Stop
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0xfc in position 0: ordinal not in range(128)
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 15:56:34.158889 Time Interval Clock Stop
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+THD-ON 2 :Error: Platform Number not defined in file Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 16:00:59.961167 Train Hold ON
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 16:00:59.961167 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number not defined in file Train Hold information
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 16:14:38.712498 Train Hold OFF
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 16:14:38.712498 Train Hold ON
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+THD-ON 2 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+Error: unsupported operand type(s) for +: 'NoneType' and 'str'
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+Error: unsupported operand type(s) for +: 'NoneType' and 'str'
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+0x53Error: unsupported operand type(s) for +: 'NoneType' and 'str'
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+0x53Error: unsupported operand type(s) for +: 'NoneType' and 'str'
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 16:53:46.072496 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 16:56:44.183320 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+0x4b 0x50 0x30 0x30 0x30 0x30 0x30 0x20Error: No section: 'PLATFORM_Platform'
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+0x43 0x41 0x20 0x30 0x30 0x30 0x20 0x33 0x38 0x20 0x30 0x30Error: No section: 'PLATFORM_Platform'
+0x4b 0x50 0x30 0x30 0x30 0x30 0x30 0x20Error: No section: 'PLATFORM_Platform'
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+0x53Error: unsupported operand type(s) for +: 'NoneType' and 'str'
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 17:51:03.513881 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 17:53:39.993539 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 17:56:30.973289 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
