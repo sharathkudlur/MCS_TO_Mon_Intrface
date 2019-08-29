@@ -15,6 +15,7 @@ import paramiko
 from datetime import datetime
 import trace
 import socket
+import logging
 import re
 cmd_tic = ''
 
@@ -29,11 +30,43 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
              global cmd_tic
              if (cmd_tic[:1] == 'L'):
                 cmd_tic = ''
-                print("Error")
+                log_file(self.data.decode("ascii") + " Error: Invalid TIC Load command")
+                print("Error: Invalid TIC Load command")
                 timer.cancel()
                 request.send(bytes("E","ascii"))
              else:
                 cmd_tic = ''
+
+          def cmd_camera_selection(monid,camid,request):
+                THD_DIR = config.get("CONF","DIR").strip('\"')
+                FTHD_INF = config.get("CONF","FILE_THD_INFO").strip('\"')
+                try:
+                    pfcsv = open(THD_DIR+"/"+FTHD_INF,'r')
+                    f1 = True
+                    for line in pfcsv:
+                        templist = []
+                        for a in line.split(","):
+                            templist.append(a.rstrip("\n"))
+                        if monid == templist[3] and (camid == templist[1] or camid == templist[2]):
+                           f1 = False
+                           ip = config.get("PLATFORM_"+templist[0] ,"TO_MONITOR_IP_ADDR").strip('\"')
+                           if (templist[1] == camid):  #int(cam_i) == 1:
+                              result_html = TRAIN_HOLD_ON(ip)
+                              logs = result_html + " " + str(today) + " Train Hold ON, selection Cam-ID :"+ camid +" and Mon-ID :"+monid
+                              log_file(logs)
+                              update_log_to_SMMS(logs)
+                           elif (templist[2] == camid):  #int(cam_i) == 2:
+                              result_html = TRAIN_HOLD_OFF(ip)
+                              logs = result_html + " " + str(today) + " Train Hold OFF, selection Cam-ID :"+ camid +" and Mon-ID :"+monid
+                              log_file(logs)
+                              update_log_to_SMMS(logs)
+                    if (f1 == True): #((f1 == True and f2 == True) and (monid != templist[3])):
+                           print("monitor id :", monid," camera id :", camid, " is not matching")
+                           log_file(self.data +" monitor id :"+ monid+" camera id :"+ camid+ "is not matching")
+                           request.send(bytes(self.data.upper()))
+                finally:
+                    pfcsv.close()
+
           self.data = self.request.recv(19200).strip()
           print("%s wrote: " % str(self.client_address))
           self.port = self.request.getsockname()[1]
@@ -50,7 +83,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 
           s = s.strip()
           print(s)
-          timer = Timer(10,ERROR,args=(self.request,))
+          timer = Timer(1,ERROR,args=(self.request,))
 #          while timer.is_alive():
 #             timer.cancel()
           if (len(s) <= 4 and (len(cmd_tic) <= 4) and (s != 'S') and (cmd_tic == '' or cmd_tic[:1] == 'L')):
@@ -118,67 +151,32 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                    update_log_to_SMMS(logs)
                    self.request.send(bytes("THD-ACK", "ascii"))
 
-          def cmd_camera_selection(monid,camid):
-                THD_DIR = config.get("CONF","DIR").strip('\"')
-                FTHD_INF = config.get("CONF","FILE_THD_INFO").strip('\"')
-                try:
-                    pfcsv = open(THD_DIR+"/"+FTHD_INF,'r')
-                    for line in pfcsv:
-                        templist = []
-                        for a in line.split(","):
-                            templist.append(a.rstrip("\n"))
-                        if monid in templist[3] and (camid in templist[1] or camid in templist[2]):
-                           ip = config.get("PLATFORM_"+templist[0] ,"TO_MONITOR_IP_ADDR").strip('\"')
-                           if (templist[1] == camid):  #int(cam_i) == 1:
-                              result_html = TRAIN_HOLD_ON(ip)
-                              logs = result_html + " " + str(today) + " Train Hold ON, selection Cam-ID :"+ camid +" and Mon-ID :"+monid
-                              log_file(logs)
-                              update_log_to_SMMS(logs)
-                           elif (templist[2] == camid):  #int(cam_i) == 2:
-                              result_html = TRAIN_HOLD_OFF(ip)
-                              logs = result_html + " " + str(today) + " Train Hold OFF, selection Cam-ID :"+ camid +" and Mon-ID :"+monid
-                              log_file(logs)
-                              update_log_to_SMMS(logs)
-                finally:
-                    pfcsv.close()
-
           if (len(s) >= 6 and (s.find('CA') != -1)):
              cmd_ca =s.index('CA')
              monid = s[cmd_ca+3:cmd_ca+6].lstrip("0")
              camid = s[cmd_ca+10:cmd_ca+13].lstrip("0")
              print(monid,camid)
-             cmd_camera_selection(monid,camid)
-          if (len(s) >= 6 and (s.find('KP') != -1)):
-                monid = s[2:4].lstrip("0")
-                camid = s[4:7].lstrip("0")
-                cmd_camera_selection(monid,camid)
+             cmd_camera_selection(monid,camid,self.request)
 
-#                THD_DIR = config.get("CONF","DIR").strip('\"')
-#                FTHD_INF = config.get("CONF","FILE_THD_INFO").strip('\"')
-#                try:
-#                    pfcsv = open(THD_DIR+"/"+FTHD_INF,'r')
-#                    for line in pfcsv:
-#                        templist = []
-#                        for a in line.split(","):
-#                            templist.append(a.rstrip("\n"))
-#                        if monid in templist[3] and (camid in templist[1] or camid in templist[2]):
-#                           ip = config.get("PLATFORM_"+templist[0] ,"TO_MONITOR_IP_ADDR").strip('\"')
-#                           if (templist[1] == camid):  #int(cam_i) == 1:
-#                              result_html = TRAIN_HOLD_ON(ip)
-#                              logs = result_html + " " + str(today) + " Train Hold ON, selection Cam-ID :"+ camid +" and Mon-ID :"+monid
-#                              log_file(logs)
-#                              update_log_to_SMMS(logs)
-#                           elif (templist[2] == camid):  #int(cam_i) == 2:
-#                              result_html = TRAIN_HOLD_OFF(ip)
-#                              logs = result_html + " " + str(today) + " Train Hold OFF, selection Cam-ID :"+ camid +" and Mon-ID :"+monid
-#                              log_file(logs)
-#                              update_log_to_SMMS(logs)
-#                finally:
-#                    pfcsv.close()
+          if (len(s) >= 6 and (s.find('KP') != -1)):
+                monid = s[2:4].lstrip("0").lstrip("0")
+                camid = s[4:7].lstrip("0").lstrip("0")
+                cmd_camera_selection(monid,camid,self.request)
+
+          if ((s.find('KP') == -1) and (s.find('CA') == -1) and (s.find('THD-O') == -1) and (s.find('S') == -1) and (s.find('L000') == -1) and (s.find('L') == -1)):
+             self.request.send(self.data)
+             log_file(self.data.decode("ascii")+":Error: Invalid Input")
+
       except urllib.error.URLError:
-        print("TO Monitor IP not Found")
+        print("Error: TO Monitor IP not Found")
+        log_file( self.data.decode("ascii") + " :Error: TO Monitor IP not Found")
       except ConnectionResetError:
-        print("Serial I/O Device Reconnected!")
+        print("Warning: Connection reset by the peer!")
+        log_file( "Connection reset by the peer!")
+      except UnicodeDecodeError as e:
+        log_file("Error:%s"% str(e))
+      except Exception as ex:
+        log_file(self.data.decode("ascii") + " :Error: %s"% str(ex))
       finally:
         self.request.close()
 
@@ -186,11 +184,16 @@ class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     pass
 
 if __name__ == "__main__":
-
+  try:
     portlist = []
     p_no =[]
     HOST = ''
     cwd = os.getcwd()
+
+    def log_file(logs):
+        f = open(cwd+"/server_cmd_prg.log", "a+")
+        f.write(logs)
+        f.write("\n")
 
     with open(cwd+"/server.ini" ,'r+') as f:
       sample_config = f.read()
@@ -209,39 +212,43 @@ if __name__ == "__main__":
       print(portlist)
     except:
       print("config file not found")
+      log_file(logs + " :Error: config file not found")
 
-    COMP = config.get("SMMS_INFO","HOST_IP").strip('\"')
-    USER = config.get("SMMS_INFO","USER_NAME").strip('\"')
-    PSW = config.get("SMMS_INFO","PASSWORD").strip('\"')
-    LOGP = config.get("SMMS_INFO","LOG_FILE_PATH").strip('\"')
+#    COMP = config.get("SMMS_INFO","HOST_IP").strip('\"')
+#    USER = config.get("SMMS_INFO","USER_NAME").strip('\"')
+#    PSW = config.get("SMMS_INFO","PASSWORD").strip('\"')
+#    LOGP = config.get("SMMS_INFO","LOG_FILE_PATH").strip('\"')
 
     def update_log_to_SMMS(log_str):
-        ssh = paramiko.SSHClient()
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        try:
-                ssh.connect(COMP, username=USER, password=PSW, allow_agent = False)
-        except paramiko.SSHException:
-                print("Failed to Connect SMMS server!")
-                quit()
+#        ssh = paramiko.SSHClient()
+#        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+#        try:
+#                ssh.connect(COMP, username=USER, password=PSW, allow_agent = False)
+#        except paramiko.SSHException:
+#                print("Failed to Connect SMMS server!")
+#                logs = "Failed to Connect SMMS server!"
+#                log_file(logs)
+#                quit()
         print(log_str)
-        stdin,stdout,stderr = ssh.exec_command("cd " + LOGP +" && d: && echo \"" +  log_str  +"\" >> server_cmd_prg.txt")
-        for line in stdout.readlines():
-                print(line.strip())
-        ssh.close()
+#        stdin,stdout,stderr = ssh.exec_command("cd " + LOGP +" && d: && echo \"" +  log_str  +"\" >> server_cmd_prg.txt")
+#        for line in stdout.readlines():
+#                print(line.strip())
+#        ssh.close()
 
-    def log_file(logs):
-        f = open(cwd+"/server_cmd_prg.log", "a+")
-        f.write(logs + "\n")
 
     def send_url_cmd(string):
+      try:
         result = urllib.request.urlopen(string)
         return result.read().decode("UTF-8")
+      except Exception as e:
+        log_file(string + " :Error: %s"% str(e))
 
     def PLATFORM_TOM_IP(p):
+      try:
         i = 1
         if p in portlist:
            print(p)
-           for section in config.sections(): 
+           for section in config.sections():
                if('PLATFORM_'+str(i) == section ):
                   for options in config.options(section):
                      val = config.get(section,options).strip("\"")
@@ -250,16 +257,24 @@ if __name__ == "__main__":
                            return ip
                      if(options == 'to_monitor_ip_addr'):
                         ip = config.get(section,options).strip("\"")
+                        if (ip.find(':') != -1):
+                           ip = '['+ip+']'
                         i += 1
         elif(p.find('THD-O') != -1):
            for spl in p.split():
                for j in p_no:
                    if spl in str(j):
-                      ip = config.get("PLATFORM_"+spl ,"TO_MONITOR_IP_ADDR").strip('\"') 
-                      return ip
+                      ip = config.get("PLATFORM_"+spl ,"TO_MONITOR_IP_ADDR").strip('\"')
+                      if (ip.find(':') != -1):
+                         return '['+ip+']'
+                      else:
+                         return ip
         elif (p.find('.') != -1):
-           print(p)
            return p
+        elif (p.find(':') != -1):
+           return '['+p+']'
+      except Exception as e:
+        log_file(p + " :Error: %s"% str(e))
 
     def TRAIN_HOLD_ON(arg):
       try:
@@ -271,7 +286,8 @@ if __name__ == "__main__":
         html = send_url_cmd(url)
         return html + " " + L_TOM_IP
       except TypeError:
-          print("Platform Number not defined in Config file")
+          print("Platform Number or TO Monitor IP not found in 'file' Train Hold information")
+          log_file(arg + " :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information")
           exit()
 
     def TRAIN_HOLD_OFF(arg):
@@ -284,17 +300,23 @@ if __name__ == "__main__":
         html = send_url_cmd(url)
         return html + " " + L_TOM_IP
       except TypeError:
-          print("Platform Number not defined in Config file")
+          print("Platform Number or TO Monitor IP not found in 'file' Train Hold information")
+          log_file(arg + " :Error: Platform Number or TO Monitor IP not found in 'file' Train Hold information")
           exit()
 
     def create_thread(HOST,PORT):
+      try:
          server = ThreadedTCPServer((HOST, PORT), ThreadedTCPRequestHandler)
          server_thread = threading.Thread(target=server.serve_forever)
          server_thread.setDaemon(True)
          server_thread.start()
+      except Exception as e:
+         log_file(str(HOST)+str(PORT)+" :Error: %s"% str(e))
 
     for port in portlist:
        create_thread(HOST,port)
 
     while 1:
         time.sleep(0.1)
+  except Exception as ex:
+    log_file("Error: %s"% str(ex))

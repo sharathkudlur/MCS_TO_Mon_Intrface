@@ -30,11 +30,39 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
              global cmd_tic
              if (cmd_tic[:1] == 'L'):
                 cmd_tic = ''
-                print("Error")
+                log_file(self.data.decode("ascii") + "Error: Invalid TIC Load command")
+                print("Error: Invalid TIC Load command")
                 timer.cancel()
                 request.send(bytes("E","ascii"))
              else:
                 cmd_tic = ''
+
+          def cmd_camera_selection(monid,camid):
+                THD_DIR = config.get("CONF","DIR").strip('\"')
+                FTHD_INF = config.get("CONF","FILE_THD_INFO").strip('\"')
+                try:
+                    pfcsv = open(THD_DIR+"/"+FTHD_INF,'r')
+                    for line in pfcsv:
+                        templist = []
+                        for a in line.split(","):
+                            templist.append(a.rstrip("\n"))
+                        if monid == templist[3] and (camid == templist[1] or camid == templist[2]):
+                           ip = config.get("PLATFORM_"+templist[0] ,"TO_MONITOR_IP_ADDR").strip('\"')
+                           if (templist[1] == camid):  #int(cam_i) == 1:
+                              result_html = TRAIN_HOLD_ON(ip)
+                              logs = result_html + " " + str(today) + " Train Hold ON, selection Cam-ID :"+ camid +" and Mon-ID :"+monid
+                              log_file(logs)
+                              update_log_to_SMMS(logs)
+                           elif (templist[2] == camid):  #int(cam_i) == 2:
+                              result_html = TRAIN_HOLD_OFF(ip)
+                              logs = result_html + " " + str(today) + " Train Hold OFF, selection Cam-ID :"+ camid +" and Mon-ID :"+monid
+                              log_file(logs)
+                              update_log_to_SMMS(logs)
+#                        if monid not in templist[3] or (camid not in templist[1] and camid not in templist[2]):
+#                           self.request.send(self.data.upper())
+                finally:
+                    pfcsv.close()
+
           self.data = self.request.recv(19200).strip()
           print("%s wrote: " % str(self.client_address))
           self.port = self.request.getsockname()[1]
@@ -119,42 +147,21 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                    update_log_to_SMMS(logs)
                    self.request.send(bytes("THD-ACK", "ascii"))
 
-          def cmd_camera_selection(monid,camid):
-                THD_DIR = config.get("CONF","DIR").strip('\"')
-                FTHD_INF = config.get("CONF","FILE_THD_INFO").strip('\"')
-                try:
-                    pfcsv = open(THD_DIR+"/"+FTHD_INF,'r')
-                    for line in pfcsv:
-                        templist = []
-                        for a in line.split(","):
-                            templist.append(a.rstrip("\n"))
-                        if monid in templist[3] and (camid in templist[1] or camid in templist[2]):
-                           ip = config.get("PLATFORM_"+templist[0] ,"TO_MONITOR_IP_ADDR").strip('\"')
-                           if (templist[1] == camid):  #int(cam_i) == 1:
-                              result_html = TRAIN_HOLD_ON(ip)
-                              logs = result_html + " " + str(today) + " Train Hold ON, selection Cam-ID :"+ camid +" and Mon-ID :"+monid
-                              log_file(logs)
-                              update_log_to_SMMS(logs)
-                           elif (templist[2] == camid):  #int(cam_i) == 2:
-                              result_html = TRAIN_HOLD_OFF(ip)
-                              logs = result_html + " " + str(today) + " Train Hold OFF, selection Cam-ID :"+ camid +" and Mon-ID :"+monid
-                              log_file(logs)
-                              update_log_to_SMMS(logs)
-#                        if monid in templist[3] and (camid in templist[1] or camid in templist[2]):
-#                           self.request.sendall(self.data.upper())
-                finally:
-                    pfcsv.close()
-
           if (len(s) >= 6 and (s.find('CA') != -1)):
              cmd_ca =s.index('CA')
              monid = s[cmd_ca+3:cmd_ca+6].lstrip("0")
              camid = s[cmd_ca+10:cmd_ca+13].lstrip("0")
              print(monid,camid)
              cmd_camera_selection(monid,camid)
+
           if (len(s) >= 6 and (s.find('KP') != -1)):
                 monid = s[2:4].lstrip("0").lstrip("0")
                 camid = s[4:7].lstrip("0").lstrip("0")
                 cmd_camera_selection(monid,camid)
+
+          if ((s.find('KP') == -1) and (s.find('CA') == -1) and (s.find('THD-O') == -1) and (s.find('S') == -1) and (s.find('L000') == -1) and (s.find('L') == -1)):
+             self.request.send(self.data)
+             log_file(self.data.decode("ascii")+":Error: Invalid Input")
 
       except urllib.error.URLError:
         print("Error: TO Monitor IP not Found")
@@ -165,7 +172,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
       except UnicodeDecodeError as e:
         log_file("Error:%s"% str(e))
       except Exception as ex:
-        log_file(self.data.decode("ascii") + "Error: %s"% str(ex))
+        log_file(self.data.decode("ascii") + ":Error: %s"% str(ex))
       finally:
         self.request.close()
 

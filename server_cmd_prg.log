@@ -137,3 +137,407 @@ http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 11
 <HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-19 17:56:30.973289 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
 http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
 192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+0x53Error: unsupported operand type(s) for +: 'NoneType' and 'str'
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+0x53Error: unsupported operand type(s) for +: 'NoneType' and 'str'
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 13:33:00.795083 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 13:33:00.795083 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 13:33:00.795083 Time Interval Clock Up Start
+0x4b 0x50 0x30 0x30 0x30 0x30 0x30 0x20Error: No section: 'PLATFORM_Platform'
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+THD-ON 2 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 14:34:12.974115 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 14:34:12.974115 Time Interval Clock Stop
+0x4c 0x37Error: 
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 14:40:14.364859 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 15:08:18.221514 Time Interval Clock Stop
+0x4c 0x32Error: Invalid TIC Load command
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 15:19:29.019534 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+0x4b 0x50 0x30 0x30 0x30 0x30 0x30 0x20:Error: No section: 'PLATFORM_Platform'
+0x4b 0x50 0x30 0x30 0x30 0x30 0x30 0x20:Error: No section: 'PLATFORM_Platform'
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 15:37:12.600618 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 15:39:10.645780 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+0x4c 0x36Error: Invalid TIC Load command
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 16:18:59.890637 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 16:18:59.890637 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-20 16:18:59.890637 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 14:17:47.366375 Time Interval Clock Stop
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0xf6 in position 0: ordinal not in range(128)
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+0x53:Error: unsupported operand type(s) for +: 'NoneType' and 'str'
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 14:25:25.453446 Time Interval Clock Stop
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 14:28:28.325860 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 14:28:28.325860 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 15:03:35.337841 Time Interval Clock Stop
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 15:09:07.338133 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 15:09:07.338133 Train Hold ON
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+THD-ON 2 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+0x4c 0x30 0x36Error: Invalid TIC Load command
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 15:03:36.990378 Train Hold ON
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+http://192.168.0.174/TIC.cgi?status=stop :Error: HTTP Error 404: Not Found
+http://192.168.0.174/TIC.cgi?status=stop :Error: HTTP Error 404: Not Found
+0x53:Error: unsupported operand type(s) for +: 'NoneType' and 'str'
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 15:33:40.124988 Train Hold ON
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+http://192.168.0.172/TIC.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+0x53:Error: unsupported operand type(s) for +: 'NoneType' and 'str'
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 15:44:16.859666 Time Interval Clock Stop
+ &::Error: invalid literal for int() with base 10: b'\x00\x04&:'
+Error:'ascii' codec can't decode byte 0x84 in position 2: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0x80 in position 2: ordinal not in range(128)
+Error:'ascii' codec can't decode byte 0xff in position 0: ordinal not in range(128)
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 15:45:17.251808 Train Hold ON
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+THD-ON 2 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.174/TIC.cgi?time=045&count=down&status=start :Error: HTTP Error 404: Not Found
+0x4c 0x30 0x34 0x35:Error: unsupported operand type(s) for +: 'NoneType' and 'str'
+Error:'ascii' codec can't decode byte 0xfe in position 1: ordinal not in range(128)
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 15:46:43.167818 Time Interval Clock Down Start
+http://192.168.0.173/TIC.cgi?status=stop :Error: <urlopen error [Errno 110] Connection timed out>
+http://192.168.0.173/TIC.cgi?status=stop :Error: <urlopen error [Errno 110] Connection timed out>
+0x53:Error: unsupported operand type(s) for +: 'NoneType' and 'str'
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TICSignal Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 15:51:36.862886 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-26 15:51:36.862886 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+0x49 0x6e 0x76 0x61 0x6c 0x69 0x64 0x20 0x49 0x6e 0x70 0x75 0x74:Error: Invalid Input
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TICSignal Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 192.168.0.171 2019-08-28 16:05:03.808376 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-28 16:05:03.808376 Time Interval Clock Down Start
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-28 16:05:57.135194 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+0x49 0x6e 0x76 0x61 0x6c 0x69 0x64 0x20 0x49 0x6e 0x70 0x75 0x74:Error: Invalid Input
+0x4c 0x32 0x32Error: Invalid TIC Load command
+0x4c 0x30Error: Invalid TIC Load command
+0x4c 0x32Error: Invalid TIC Load command
+0x4c 0x35Error: Invalid TIC Load command
+0x4c 0x35Error: Invalid TIC Load command
+0x4cError: Invalid TIC Load command
+0x49 0x6e 0x76 0x61 0x6c 0x69 0x64 0x20 0x49 0x6e 0x70 0x75 0x74:Error: Invalid Input
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-28 16:07:44.335028 Time Interval Clock Down Start
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-28 17:15:34.413457 Time Interval Clock Stop
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+THD-ON 2 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.173/trainhold.cgi?status=stop :Error: <urlopen error [Errno 110] Connection timed out>
+THD-OFF 3 :Error: Platform Number or TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+THD-ON 2 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.173/trainhold.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+THD-OFF 3 :Error: Platform Number or TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+THD-ON 2 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.173/trainhold.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+THD-OFF 3 :Error: Platform Number or TO Monitor IP not found in 'file' Train Hold information
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+Connection reset by the peer!
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TICSignal Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 09:28:18.863529 Time Interval Clock Stop
+0x4c 0x30 0x32Error: Invalid TIC Load command
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+THD-ON 2 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 09:55:54.121783 Time Interval Clock Down Start
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 09:55:54.121783 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 10:01:34.416916 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 10:03:39.988967 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 10:05:54.735115 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+0x49 0x6e 0x76 0x61 0x6c 0x69 0x64 0x20 0x49 0x6e 0x70 0x75 0x74:Error: Invalid Input
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 11:12:51.460639 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 11:30:46.911672 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 11:36:26.528569 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 11:45:05.163726 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+0x43 0x41 0x20 0x30 0x30 0x38 0x20 0x33 0x38 0x20 0x30 0x34 0x34:Error: local variable 'templistcon' referenced before assignment
+0x43 0x41 0x20 0x30 0x30 0x30 0x20 0x33 0x38 0x20 0x30 0x30 0x30:Error: No section: 'PLATFORM_Platform'
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 111] Connection refused>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 14:07:07.623927 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 14:16:20.352587 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+0x43 0x41 0x20 0x30 0x30 0x38 0x20 0x33 0x38 0x20 0x30 0x34 0x34:Error: name 'prnt' is not defined
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 14:19:45.516915 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+0x43 0x41 0x20 0x30 0x30 0x38 0x20 0x33 0x38 0x20 0x30 0x34 0x34:Error: name 'prnt' is not defined
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 14:21:23.530505 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+0x4b 0x50 0x30 0x38 0x30 0x34 0x34 0x20:Error: name 'prnt' is not defined
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 14:21:53.236541 Train Hold OFF, selection Cam-ID :1 and Mon-ID :8
+0x4b 0x50 0x30 0x38 0x30 0x30 0x31 0x20:Error: name 'prnt' is not defined
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 14:25:02.166407 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+0x4b 0x50 0x30 0x38 0x30 0x34 0x34 0x20:Error: name 'prnt' is not defined
+0x4b 0x50 0x30 0x31 0x30 0x34 0x34 0x20:Error: log_file() takes 1 positional argument but 5 were given
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 14:39:38.390256 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+0x43 0x41 0x20 0x30 0x30 0x38 0x20 0x33 0x38 0x20 0x30 0x34 0x34:Error: name 'prnt' is not defined
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 14:41:40.571386 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+0x43 0x41 0x20 0x30 0x30 0x38 0x20 0x33 0x38 0x20 0x30 0x34 0x34:Error: log_file() takes 1 positional argument but 5 were given
+monitor id :88camera id :44is not matching
+0x43 0x41 0x20 0x30 0x38 0x38 0x20 0x33 0x38 0x20 0x30 0x34 0x34:Error: a bytes-like object is required, not 'str'
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 14:45:11.506461 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+monitor id :8camera id :44is not matching
+0x43 0x41 0x20 0x30 0x30 0x38 0x20 0x33 0x38 0x20 0x30 0x34 0x34:Error: a bytes-like object is required, not 'str'
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 14:52:49.611435 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+monitor id :8camera id :44is not matching
+0x43 0x41 0x20 0x30 0x30 0x38 0x20 0x33 0x38 0x20 0x30 0x34 0x34:Error: encoding without a string argument
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 14:58:33.056297 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+monitor id :8camera id :44is not matching
+0x43 0x41 0x20 0x30 0x30 0x38 0x20 0x33 0x38 0x20 0x30 0x34 0x34:Error: encoding without a string argument
+monitor id :1camera id :44is not matching
+0x43 0x41 0x20 0x30 0x30 0x31 0x20 0x33 0x38 0x20 0x30 0x34 0x34:Error: encoding without a string argument
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 14:58:56.664225 Train Hold OFF, selection Cam-ID :1 and Mon-ID :8
+monitor id :8camera id :1is not matching
+0x43 0x41 0x20 0x30 0x30 0x38 0x20 0x33 0x38 0x20 0x30 0x30 0x31:Error: encoding without a string argument
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 16:45:17.451026 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+monitor id :8camera id :3is not matching
+0x43 0x41 0x20 0x30 0x30 0x38 0x20 0x33 0x38 0x20 0x30 0x30 0x33:Error: encoding without a string argument
+<HTML><BR><FORM METHOD="GET" ACTION="http://192.168.0.171">Apply Failed -- Load TICSignal Conf. Failed <INPUT TYPE="submit" VALUE="Return"><BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 17:03:53.777183 Time Interval Clock Stop
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 17:03:53.777183 Time Interval Clock Down Start
+monitor id :8camera id :45is not matching
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+http://192.168.0.172/trainhold.cgi?status=stop :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or TO Monitor IP not found in 'file' Train Hold information
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 17:05:47.562667 Train Hold OFF, selection Cam-ID :1 and Mon-ID :
+monitor id :4 camera id :is not matching
+monitor id :camera id :1is not matching
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 17:45:19.949392 Train Hold OFF, selection Cam-ID :1 and Mon-ID :8
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 17:45:19.949392 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+monitor id :8camera id :is not matching
+monitor id :camera id :1is not matching
+monitor id :camera id :44is not matching
+monitor id :9camera id :1is not matching
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 17:55:02.953156 Train Hold OFF, selection Cam-ID :1 and Mon-ID :8
+http://192.168.0.172/trainhold.cgi?status=start :Error: <urlopen error [Errno 113] No route to host>
+192.168.0.172 :Error: Platform Number or  TO Monitor IP not found in 'file' Train Hold information
+monitor id :8camera id :45is not matching
+monitor id :44camera id :is not matching
+<HTML><BR>Successed --  <BR> <BR><BR></HTML> 192.168.0.171 2019-08-29 17:56:04.202327 Train Hold ON, selection Cam-ID :44 and Mon-ID :8
+monitor id :8camera id :is not matching
